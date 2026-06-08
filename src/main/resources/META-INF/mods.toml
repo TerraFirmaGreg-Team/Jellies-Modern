@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "LGPL-3.0-1"
+issueTrackerURL = "https://github.com/TerraFirmaGreg-Team/Jellies-Modern/issues"
+
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+displayURL = "${mod_url}"
+logoFile = "${mod_logo_path}"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+
+[[dependencies."${mod_id}"]]
+modId = "forge"
+mandatory = true
+versionRange = "${forge_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${minecraft_version}"
+ordering = "NONE"
+side = "BOTH"

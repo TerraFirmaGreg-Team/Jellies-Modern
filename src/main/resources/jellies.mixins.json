@@ -1,0 +1,11 @@
+{
+    "mixins": [],
+    "minVersion": "0.8",
+    "package": "team.terrafirmagreg.jellies.mixins",
+    "plugin": "team.terrafirmagreg.core.mixin.MixinPlugin",
+    "injectors": {"defaultRequire": 1},
+    "compatibilityLevel": "JAVA_17",
+    "client": [],
+    "required": true,
+    "refmap": "jellies.refmap.json"
+}

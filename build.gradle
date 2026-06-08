@@ -1,0 +1,160 @@
+buildscript {
+    repositories {
+        // These repositories are only for Gradle plugins
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenCentral()
+        maven {
+            name = "NeoForged"
+            url = 'https://maven.neoforged.net/releases'
+            content {
+                includeGroup "net.neoforged"
+            }
+        }
+    }
+}
+
+
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'idea'
+    id 'net.neoforged.moddev.legacyforge' version "${mdg_legacy_version}"
+    id 'com.diffplug.spotless' version "${spotless_version}"
+    id "com.github.ManifestClasspath" version "0.1.0-RELEASE"
+}
+
+apply from: 'gradle/scripts/repositories.gradle'
+apply from: 'gradle/scripts/dependencies.gradle'
+apply from: 'gradle/scripts/spotless.gradle'
+
+group = 'team.terrafirmagreg.jellies'
+version = '0.0.1'
+
+base {
+    version = "${mod_version}"
+    group = "${mod_package}"
+    archivesName = "${mod_name}-${mod_name_suffix}"
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+
+}
+
+mixin {
+    var refMap = add sourceSets.main, "${mod_id}.refmap.json"
+    jar.from refMap
+    config "${mod_id}.mixins.json"
+}
+
+sourceSets {
+    main.resources {
+        srcDir 'src/main/resources'
+        srcDir 'src/generated/resources'
+    }
+
+    test {
+        compileClasspath += main.output + main.compileClasspath
+        runtimeClasspath += main.output + main.runtimeClasspath
+    }
+}
+
+legacyForge {
+    version = "${minecraft_version}-${forge_version}"
+
+    runs {
+        configureEach {
+            gameDirectory = project.file('run')
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            systemProperty 'forge.logging.console.level', 'INFO'
+        }
+
+        client {
+            client()
+            ideName = "Client"
+            gameDirectory = project.file('run/client')
+        }
+
+        server {
+            server()
+            ideName = "Server"
+            gameDirectory = project.file('run/server')
+            programArgument '--nogui'
+        }
+
+        data {
+            data()
+            ideName = "Data"
+            gameDirectory = project.file('run/data')
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            programArguments.addAll "--mod", "$mod_id", "--all"
+            programArguments.addAll '--output', file('src/generated/resources/').getAbsolutePath()
+            programArguments.addAll '--existing', file('src/main/resources/').getAbsolutePath()
+
+            String[] existingMods = new String[]{
+                    "tfg", "gtceu", "tfc", "firmalife", "species",
+                    "ad_astra", "wan_ancient_beasts", "rnr", "afc",
+                    "beneath", "craftingstation"
+            }
+
+            for (String mod : existingMods) {
+                programArguments.addAll '--existing-mod', mod
+            }
+        }
+
+        gameTestServer {
+            type = "gameTestServer"
+            sourceSet = sourceSets.test
+            ideName = "Game Tests"
+
+            gameDirectory.set(file('run/gametest'))
+            systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
+            environment('TEST', 'true')
+        }
+
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+processResources {
+    var replaceProperties = [
+            'mod_id'              : "${mod_id}",
+            'mod_name'            : "${mod_name}",
+            'mod_version'         : "${mod_version}",
+            'mod_description'     : "${mod_description}",
+            'mod_authors'         : "${mod_authors}",
+            'mod_credits'         : "${mod_credits}",
+            'mod_url'             : "${mod_url}",
+            'mod_logo_path'       : "${mod_logo_path}",
+
+            'minecraft_version'   : "${minecraft_version}",
+
+            'forge_version'       : "${forge_version}",
+            'forge_version_range' : "${loader_version_range}",
+            'loader_version_range': "${loader_version_range}"
+    ]
+    var filterList = [
+            'META-INF/mods.toml',
+            'pack.mcmeta'
+    ]
+
+    inputs.properties replaceProperties
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    filesMatching(filterList) { fcd ->
+        fcd.expand(replaceProperties + [project: project])
+    }
+}
