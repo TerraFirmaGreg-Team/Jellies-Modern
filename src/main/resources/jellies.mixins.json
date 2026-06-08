@@ -1,5 +1,5 @@
 {
-    "mixins": [],
+    "mixins": ["AnyMixin"],
     "minVersion": "0.8",
     "package": "team.terrafirmagreg.jellies.mixin",
     "plugin": "team.terrafirmagreg.jellies.mixin.MixinPlugin",
