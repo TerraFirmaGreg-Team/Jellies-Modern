@@ -1,5 +1,9 @@
 {
-    "mixins": ["AnyMixin"],
+    "mixins": [
+        "common.registrate.AbstractRegistrateAccessor",
+        "common.minecraft.ModelProviderMixin"
+    ],
+    "mixinextras": {"minVersion": "0.5.3"},
     "minVersion": "0.8",
     "package": "team.terrafirmagreg.jellies.mixin",
     "plugin": "team.terrafirmagreg.jellies.mixin.MixinPlugin",

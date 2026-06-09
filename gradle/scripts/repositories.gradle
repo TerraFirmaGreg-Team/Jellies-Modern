@@ -2,6 +2,7 @@ repositories {
     mavenLocal()
     mavenCentral()
 
+    // Curseforge
     maven {
         name 'CurseMaven'
         url 'https://cursemaven.com'
@@ -9,6 +10,8 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    // Modrinth
     maven {
         name 'Modrinth'
         url 'https://api.modrinth.com/maven'
@@ -17,6 +20,7 @@ repositories {
         }
     }
 
+    // Registrate
     maven {
         name "Tterrag"
         url "https://modmaven.dev/"
@@ -24,11 +28,23 @@ repositories {
             includeGroup("com.tterrag.registrate")
         }
     }
-    maven { // Mixin²
+
+    // Mixin²
+    maven {
         url "https://maven.bawnorton.com/releases"
         content {
             includeGroup "com.github.bawnorton.mixinsquared"
         }
+    }
+
+    // Configuration
+    maven {
+        name 'Configuration'
+        url 'https://repo.repsy.io/mvn/toma/public/'
+    }
+    maven {
+        name 'Configuration (alternative/backup)'
+        url 'https://api.repsy.io/mvn/toma/public/'
     }
 
 }
