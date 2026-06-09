@@ -5,14 +5,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLConstructModEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import team.terrafirmagreg.jellies.config.ConfigHolder;
 
 @SuppressWarnings({ "removal" })
 public class CommonInit {
     public CommonInit() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.register(this);
-
-        // Config here
+        ConfigHolder.init();
     }
 
     public static void init() {
