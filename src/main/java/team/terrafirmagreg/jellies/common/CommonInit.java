@@ -18,7 +18,7 @@ public class CommonInit {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.register(this);
         ConfigHolder.init();
-        Jellies.REGISTRATE.registerEventListeners(eventBus);
+        Jellies.REGISTRATE.registerRegistrate();
 
         JelliesItems.init();
         JelliesCreativeTab.init();

@@ -59,15 +59,12 @@ public class JelliesRegistrate extends AbstractRegistrate<JelliesRegistrate> {
     @Override
     public JelliesRegistrate registerEventListeners(IEventBus bus) {
         if (!registered.getAndSet(true)) {
-            // recreate the super method so we can register the event listener with LOW priority.
             Consumer<RegisterEvent> onRegister = this::onRegister;
             Consumer<RegisterEvent> onRegisterLate = this::onRegisterLate;
             bus.addListener(EventPriority.LOW, onRegister);
             bus.addListener(EventPriority.LOWEST, onRegisterLate);
 
-            // Fired multiple times when ever tabs need contents rebuilt (changing op tab perms for example)
             bus.addListener(this::onBuildCreativeModeTabContents);
-            // Register events fire multiple times, so clean them up on common setup
             OneTimeEventReceiver.addModListener(this, FMLCommonSetupEvent.class, $ -> {
                 OneTimeEventReceiver.unregister(this, onRegister, RegisterEvent.class);
                 OneTimeEventReceiver.unregister(this, onRegisterLate, RegisterEvent.class);
