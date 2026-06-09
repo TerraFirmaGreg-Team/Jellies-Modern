@@ -1,10 +1,12 @@
 package team.terrafirmagreg.jellies.config;
 
+import org.jetbrains.annotations.ApiStatus;
+
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
-import org.jetbrains.annotations.ApiStatus;
+
 import team.terrafirmagreg.jellies.Jellies;
 
 @Config(id = Jellies.MOD_ID)

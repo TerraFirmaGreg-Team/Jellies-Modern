@@ -5,6 +5,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLConstructModEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+import team.terrafirmagreg.jellies.Jellies;
+import team.terrafirmagreg.jellies.common.data.JelliesCreativeTab;
+import team.terrafirmagreg.jellies.common.data.JelliesEntities;
+import team.terrafirmagreg.jellies.common.data.JelliesItems;
 import team.terrafirmagreg.jellies.config.ConfigHolder;
 
 @SuppressWarnings({ "removal" })
@@ -13,6 +18,11 @@ public class CommonInit {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.register(this);
         ConfigHolder.init();
+        Jellies.REGISTRATE.registerEventListeners(eventBus);
+
+        JelliesItems.init();
+        JelliesCreativeTab.init();
+        JelliesEntities.init();
     }
 
     public static void init() {

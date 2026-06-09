@@ -23,7 +23,6 @@ public final class Jellies {
     }
 
     public Jellies() {
-
         DistExecutor.unsafeRunForDist(() -> ClientInit::new, () -> CommonInit::new);
     }
 
