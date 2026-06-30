@@ -27,9 +27,6 @@ apply from: 'gradle/scripts/repositories.gradle'
 apply from: 'gradle/scripts/dependencies.gradle'
 apply from: 'gradle/scripts/spotless.gradle'
 
-group = 'team.terrafirmagreg.jellies'
-version = '0.0.1'
-
 base {
     version = "${mod_version}"
     group = "${mod_package}"
