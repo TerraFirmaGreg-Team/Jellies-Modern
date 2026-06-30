@@ -33,7 +33,7 @@ version = '0.0.1'
 base {
     version = "${mod_version}"
     group = "${mod_package}"
-    archivesName = "${mod_name}-${mod_name_suffix}"
+    archivesName = "${mod_name}"
 }
 
 idea {
