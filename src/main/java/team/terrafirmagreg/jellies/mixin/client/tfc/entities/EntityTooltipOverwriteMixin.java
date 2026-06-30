@@ -52,7 +52,7 @@ public class EntityTooltipOverwriteMixin {
      */
     @Overwrite
     public static void register(RegisterCallback<EntityTooltip, Entity> registry) {
-        registry.register("animal", MIXINED_ANIMAL, TFCAnimal.class);
+        registry.register("animal", JELLIE_ANIMAL, TFCAnimal.class);
         registry.register("horse", ANIMAL, TFCHorse.class);
         registry.register("chested_horse", ANIMAL, TFCChestedHorse.class);
         registry.register("rabbit", ANIMAL, TFCRabbit.class);
@@ -70,15 +70,15 @@ public class EntityTooltipOverwriteMixin {
 
     @Unique
     private static final EntityTooltip JELLIE_BASE = (level, entity, tooltip) -> {
-        if (entity instanceof JellieBase slime) {
+        if (entity instanceof JellieBase jellie) {
             tooltip.accept(Component.translatable(
-                    (Jellies.MOD_ID + ".tooltip.slime.variant." + slime.getVariant().getSerializedName())
+                    (Jellies.MOD_ID + ".tooltip.jellie.variant." + jellie.getVariant().getSerializedName())
                             .toLowerCase(Locale.ROOT)));
         }
     };
 
     @Unique
-    private static final EntityTooltip MIXINED_ANIMAL = (level, entity, tooltip) -> {
+    private static final EntityTooltip JELLIE_ANIMAL = (level, entity, tooltip) -> {
         if (entity instanceof WildAnimal animal) {
             if (animal.displayMaleCharacteristics()) {
                 tooltip.accept(Helpers.translateEnum(TFCAnimalProperties.Gender.MALE));

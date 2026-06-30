@@ -16,7 +16,7 @@ public class BreedBehaviorMixin {
             method = "checkExtraStartConditions(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/animal/Animal;)Z",
             at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/common/entities/BrainBreeder;isMale()Z"))
     // spotless:on
-    private boolean tfg$slimeCanStartBreeding(BrainBreeder breeder) {
+    private boolean jellies$slimeCanStartBreeding(BrainBreeder breeder) {
         if (breeder instanceof JellieBase) {
             return true;
         }
@@ -29,7 +29,7 @@ public class BreedBehaviorMixin {
             method = "hasValidBreedPartner(Lnet/minecraft/world/entity/animal/Animal;)Z",
             at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/common/entities/BrainBreeder;isMale()Z"))
     // spotless:on
-    private boolean tfg$slimeIsValidPartner(BrainBreeder breeder) {
+    private boolean jellies$slimeIsValidPartner(BrainBreeder breeder) {
         if (breeder instanceof JellieBase) {
             return false;
         }

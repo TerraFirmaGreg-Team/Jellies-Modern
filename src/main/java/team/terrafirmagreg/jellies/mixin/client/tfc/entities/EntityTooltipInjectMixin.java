@@ -28,9 +28,9 @@ public class EntityTooltipInjectMixin {
 
     @Unique
     private static final EntityTooltip JELLIE_BASE = (level, entity, tooltip) -> {
-        if (entity instanceof JellieBase slime) {
+        if (entity instanceof JellieBase jellie) {
             tooltip.accept(Component.translatable(
-                    (Jellies.MOD_ID + ".tooltip.slime.variant." + slime.getVariant().getSerializedName())
+                    (Jellies.MOD_ID + ".tooltip.jellie.variant." + jellie.getVariant().getSerializedName())
                             .toLowerCase(Locale.ROOT)));
         }
     };
