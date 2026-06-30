@@ -47,4 +47,38 @@ repositories {
         url 'https://api.repsy.io/mvn/toma/public/'
     }
 
+    // Create, Ponder, Flywheel
+    maven {
+        url = "https://maven.createmod.net"
+    }
+
+    // location of a maven mirror for JEI files, as a fallback
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+        content {
+            includeGroup("com.simibubi.create")
+            includeGroup("dev.engine-room.flywheel")
+        }
+    }
+
+    // GTM
+    maven {
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+            includeGroup 'appeng'
+        }
+    }
+
+    // LDLib, Shimmer
+    maven {
+        name = "FirstDarkDev Maven"
+        url = "https://maven.firstdarkdev.xyz/snapshots"
+        content {
+            includeGroup("com.lowdragmc.ldlib")
+        }
+    }
+
 }

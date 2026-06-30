@@ -10,14 +10,12 @@ import team.terrafirmagreg.jellies.Jellies;
 import team.terrafirmagreg.jellies.common.data.JelliesCreativeTab;
 import team.terrafirmagreg.jellies.common.data.JelliesEntities;
 import team.terrafirmagreg.jellies.common.data.JelliesItems;
-import team.terrafirmagreg.jellies.config.ConfigHolder;
 
 @SuppressWarnings({ "removal" })
 public class CommonInit {
     public CommonInit() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.register(this);
-        ConfigHolder.init();
         Jellies.REGISTRATE.registerRegistrate();
 
         JelliesItems.init();

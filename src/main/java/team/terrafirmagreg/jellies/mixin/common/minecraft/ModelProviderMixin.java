@@ -20,7 +20,7 @@ public class ModelProviderMixin {
 
     @Inject(method = "extendWithFolder", at = @At("HEAD"), remap = false, cancellable = true)
     private void jellies$extendWithFolder(ResourceLocation rl, CallbackInfoReturnable<ResourceLocation> cir) {
-        if (rl.getNamespace().equals("tfm") && !rl.getPath().startsWith("item") && !rl.getPath().startsWith("block"))
+        if (rl.getNamespace().equals("jellies") && !rl.getPath().startsWith("item") && !rl.getPath().startsWith("block"))
             cir.setReturnValue(Jellies.id(folder + "/" + rl.getPath()));
     }
 }

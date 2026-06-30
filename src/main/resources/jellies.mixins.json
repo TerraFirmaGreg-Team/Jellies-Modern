@@ -3,9 +3,9 @@
         "common.registrate.AbstractRegistrateAccessor",
         "common.minecraft.ModelProviderMixin"
     ],
-    "mixinextras": {"minVersion": "0.5.3"},
     "minVersion": "0.8",
     "package": "team.terrafirmagreg.jellies.mixin",
+    "mixinextras": {"minVersion": "0.5.3"},
     "plugin": "team.terrafirmagreg.jellies.mixin.MixinPlugin",
     "injectors": {"defaultRequire": 1},
     "compatibilityLevel": "JAVA_17",
