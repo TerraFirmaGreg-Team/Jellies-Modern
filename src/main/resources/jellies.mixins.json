@@ -10,7 +10,10 @@
     "plugin": "team.terrafirmagreg.jellies.mixin.JelliesMixinPlugin",
     "injectors": {"defaultRequire": 1},
     "compatibilityLevel": "JAVA_17",
-    "client": [],
+    "client": [
+        "client.tfc.entities.EntityTooltipInjectMixin",
+        "client.tfc.entities.EntityTooltipOverwriteMixin"
+    ],
     "required": true,
     "refmap": "jellies.refmap.json"
 }
