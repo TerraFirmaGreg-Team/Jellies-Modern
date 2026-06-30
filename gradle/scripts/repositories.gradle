@@ -46,4 +46,12 @@ repositories {
         name 'Configuration (alternative/backup)'
         url 'https://api.repsy.io/mvn/toma/public/'
     }
+
+    // EMI
+    repositories {
+        maven {
+            name = "TerraformersMC"
+            url = "https://maven.terraformersmc.com/"
+        }
+    }
 }

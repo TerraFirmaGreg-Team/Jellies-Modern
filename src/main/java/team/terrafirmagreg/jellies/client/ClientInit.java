@@ -8,10 +8,6 @@ import team.terrafirmagreg.jellies.common.CommonInit;
 public class ClientInit extends CommonInit {
     public ClientInit() {
         super();
-        init();
-    }
-
-    public static void init() {
     }
 
     @SubscribeEvent

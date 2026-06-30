@@ -14,7 +14,7 @@ dependencies {
     compileOnly annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.6-beta.1")
     implementation jarJar("com.github.bawnorton.mixinsquared:mixinsquared-forge:0.3.6-beta.1")
 
-    modCompileOnly "com.tterrag.registrate:Registrate:MC1.20-1.3.11"
+    modImplementation jarJar("com.tterrag.registrate:Registrate:MC1.20-1.3.11")
 
     modImplementation "maven.modrinth:ferrite-core:DG5Fn9Sz"
     modImplementation "maven.modrinth:architectury-api:9.2.14+forge"

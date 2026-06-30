@@ -7,20 +7,21 @@ import net.minecraftforge.fml.event.lifecycle.FMLConstructModEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import team.terrafirmagreg.jellies.Jellies;
-import team.terrafirmagreg.jellies.common.data.JelliesCreativeTab;
-import team.terrafirmagreg.jellies.common.data.JelliesEntities;
-import team.terrafirmagreg.jellies.common.data.JelliesItems;
+import team.terrafirmagreg.jellies.common.data.*;
 
 @SuppressWarnings({ "removal" })
 public class CommonInit {
     public CommonInit() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.register(this);
-        Jellies.REGISTRATE.registerRegistrate();
+
+        Jellies.REGISTRATE.registerEventListeners(eventBus);
 
         JelliesItems.init();
         JelliesCreativeTab.init();
         JelliesEntities.init();
+        JelliesEntityDataSerializers.ENTITY_DATA_SERIALIZERS.register(eventBus);
+        JelliesSounds.SOUNDS.register(eventBus);
     }
 
     public static void init() {
