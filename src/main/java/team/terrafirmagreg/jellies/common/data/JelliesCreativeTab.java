@@ -8,7 +8,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 
 import team.terrafirmagreg.jellies.Jellies;
-import team.terrafirmagreg.jellies.registrate.JelliesRegistrate;
+import team.terrafirmagreg.jellies.JelliesRegistrate;
 
 @SuppressWarnings({ "unused" })
 public class JelliesCreativeTab {

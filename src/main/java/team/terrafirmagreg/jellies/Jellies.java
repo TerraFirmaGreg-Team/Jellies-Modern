@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.Mod;
 
 import team.terrafirmagreg.jellies.client.ClientInit;
 import team.terrafirmagreg.jellies.common.CommonInit;
-import team.terrafirmagreg.jellies.registrate.JelliesRegistrate;
 
 @Mod(Jellies.MOD_ID)
 public final class Jellies {

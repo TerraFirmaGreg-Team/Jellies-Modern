@@ -1,4 +1,4 @@
-package team.terrafirmagreg.jellies.registrate;
+package team.terrafirmagreg.jellies;
 
 import java.util.IdentityHashMap;
 import java.util.Map;
@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import net.minecraftforge.fml.loading.LoadingModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -66,7 +67,7 @@ public class JelliesRegistrate extends AbstractRegistrate<JelliesRegistrate> {
                 OneTimeEventReceiver.unregister(this, onRegister, RegisterEvent.class);
                 OneTimeEventReceiver.unregister(this, onRegisterLate, RegisterEvent.class);
             });
-            if (JelliesRegistrateHelper.getDoDatagen(this).get()) {
+            if (getDoDatagen(this).get()) {
                 OneTimeEventReceiver.addModListener(this, GatherDataEvent.class, this::onData);
             }
         }
@@ -121,5 +122,13 @@ public class JelliesRegistrate extends AbstractRegistrate<JelliesRegistrate> {
     public <P> NoConfigBuilder<CreativeModeTab, CreativeModeTab, P> defaultCreativeTab(P parent, String name,
             Consumer<CreativeModeTab.Builder> config) {
         return createCreativeModeTab(parent, name, config);
+    }
+
+    public static NonNullSupplier<Boolean> getDoDatagen(AbstractRegistrate<?> registrate) {
+        if (LoadingModList.get().getModFileById("tfg") != null) {
+            return ((com.gregtechceu.gtceu.core.mixins.registrate.AbstractRegistrateAccessor) registrate).getDoDatagen();
+        } else {
+            return ((team.terrafirmagreg.jellies.mixin.common.registrate.AbstractRegistrateAccessor) registrate).getDoDatagen();
+        }
     }
 }
