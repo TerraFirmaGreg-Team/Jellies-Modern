@@ -54,4 +54,13 @@ repositories {
             url = "https://maven.terraformersmc.com/"
         }
     }
+
+    maven { //GTM maven
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+            includeGroup 'appeng'
+        }
+    }
 }

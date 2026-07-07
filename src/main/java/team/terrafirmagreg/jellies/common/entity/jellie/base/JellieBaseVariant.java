@@ -25,12 +25,20 @@ import team.terrafirmagreg.jellies.common.data.JelliesTags;
 
 @MethodsReturnNonnullByDefault
 public enum JellieBaseVariant implements StringRepresentable {
+    // BATCH 1
     PLANT(Jellies.id("textures/entity/jellie/plant.png"), Level.NETHER, JelliesTags.Biomes.PlantJellieHabitat, JelliesItems.PLANT_SLIME_BALL.asItem()),
     GLOWBERRY(Jellies.id("textures/entity/jellie/glowberry.png"), Level.NETHER, JelliesTags.Biomes.GlowberryJellieHabitat, JelliesItems.GLOWBERRY_SLIME_BALL.asItem()),
     SPRING(Jellies.id("textures/entity/jellie/spring.png"), Level.NETHER, JelliesTags.Biomes.SpringJellieHabitat, null),
     ICE(Jellies.id("textures/entity/jellie/ice.png"), Level.NETHER, JelliesTags.Biomes.IceJellieHabitat, null),
     LAVA(Jellies.id("textures/entity/jellie/lava.png"), Level.NETHER, JelliesTags.Biomes.LavaJellieHabitat, null),
-    LATEX(Jellies.id("textures/entity/jellie/latex.png"), Level.NETHER, null, JelliesItems.LATEX_SLIME_BALL.asItem());
+    LATEX(Jellies.id("textures/entity/jellie/latex.png"), Level.NETHER, null, JelliesItems.LATEX_SLIME_BALL.asItem()),
+
+    // BATCH 2
+    CERTUS(Jellies.id("textures/entity/jellie/certus.png"), Level.OVERWORLD, null, null),
+    PHOSPHORUM(Jellies.id("textures/entity/jellie/phosphorum.png"), Level.OVERWORLD, null, null),
+    PENTETIC(Jellies.id("textures/entity/jellie/pentetic.png"), Level.OVERWORLD, null, null),
+    HERBAL(Jellies.id("textures/entity/jellie/herbal.png"), Level.OVERWORLD, null, null),
+    BIOTITE(Jellies.id("textures/entity/jellie/biotite.png"), Level.NETHER, null, null);
 
     private static final Map<String, JellieBaseVariant> variantNameMap = new HashMap<>();
 

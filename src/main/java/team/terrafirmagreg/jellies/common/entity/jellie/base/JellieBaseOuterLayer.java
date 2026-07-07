@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.entity.layers.RenderLayer;
 
 import team.terrafirmagreg.jellies.Jellies;
 
+@SuppressWarnings({ "unchecked" })
 public class JellieBaseOuterLayer extends RenderLayer<JellieBase, JellieBaseModel<JellieBase>> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
             Jellies.id("jellie_outer"), "main");

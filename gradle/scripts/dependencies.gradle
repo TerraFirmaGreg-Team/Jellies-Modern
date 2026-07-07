@@ -14,7 +14,7 @@ dependencies {
     compileOnly annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.6-beta.1")
     implementation jarJar("com.github.bawnorton.mixinsquared:mixinsquared-forge:0.3.6-beta.1")
 
-    modImplementation jarJar("com.tterrag.registrate:Registrate:MC1.20-1.3.11")
+    modImplementation "com.tterrag.registrate:Registrate:MC1.20-1.3.11"
 
     modImplementation "maven.modrinth:ferrite-core:DG5Fn9Sz"
     modImplementation "maven.modrinth:architectury-api:9.2.14+forge"
@@ -28,6 +28,9 @@ dependencies {
     // KJS
     // modImplementation "maven.modrinth:rhino:2001.2.2-build.18+forge"
     // modImplementation "maven.modrinth:kubejs:2001.6.5-build.7+forge"
+
+    // GTM
+    compileOnly ("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtm_version}") { transitive = false }
 
     // TFC
     modImplementation ("maven.modrinth:patchouli:1.20.1-84.1-forge") { transitive = false }

@@ -14,7 +14,8 @@ public class JelliesMixinPlugin implements IMixinConfigPlugin {
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         boolean isTfgLoaded = isModLoaded("tfg");
 
-        if (mixinClassName.equals("team.terrafirmagreg.jellies.mixin.client.tfc.entities.EntityTooltipOverwriteMixin"))
+        if (mixinClassName.equals("team.terrafirmagreg.jellies.mixin.client.tfc.entities.EntityTooltipOverwriteMixin")
+                || mixinClassName.equals("team.terrafirmagreg.jellies.mixin.common.registrate.AbstractRegistrateAccessor"))
             return !isTfgLoaded;
         if (mixinClassName.equals("team.terrafirmagreg.jellies.mixin.client.tfc.entities.EntityTooltipInjectMixin"))
             return isTfgLoaded;

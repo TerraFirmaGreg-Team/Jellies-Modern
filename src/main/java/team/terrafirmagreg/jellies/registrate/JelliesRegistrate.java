@@ -1,4 +1,4 @@
-package team.terrafirmagreg.jellies;
+package team.terrafirmagreg.jellies.registrate;
 
 import java.util.IdentityHashMap;
 import java.util.Map;
@@ -35,8 +35,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 
-import team.terrafirmagreg.jellies.mixin.common.registrate.AbstractRegistrateAccessor;
-
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 @SuppressWarnings({ "removal" })
@@ -63,13 +61,12 @@ public class JelliesRegistrate extends AbstractRegistrate<JelliesRegistrate> {
             Consumer<RegisterEvent> onRegisterLate = this::onRegisterLate;
             bus.addListener(EventPriority.LOW, onRegister);
             bus.addListener(EventPriority.LOWEST, onRegisterLate);
-
             bus.addListener(this::onBuildCreativeModeTabContents);
             OneTimeEventReceiver.addModListener(this, FMLCommonSetupEvent.class, $ -> {
                 OneTimeEventReceiver.unregister(this, onRegister, RegisterEvent.class);
                 OneTimeEventReceiver.unregister(this, onRegisterLate, RegisterEvent.class);
             });
-            if (((AbstractRegistrateAccessor) this).getDoDatagen().get()) {
+            if (JelliesRegistrateHelper.getDoDatagen(this).get()) {
                 OneTimeEventReceiver.addModListener(this, GatherDataEvent.class, this::onData);
             }
         }
