@@ -1,9 +1,17 @@
 package team.terrafirmagreg.jellies.common.data;
 
-import com.tterrag.registrate.util.entry.EntityEntry;
+import java.util.function.Supplier;
 
+import com.tterrag.registrate.util.entry.EntityEntry;
+import com.tterrag.registrate.util.nullness.NonNullFunction;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
+
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -12,7 +20,19 @@ import net.minecraftforge.fml.common.Mod;
 
 import team.terrafirmagreg.jellies.Jellies;
 import team.terrafirmagreg.jellies.common.entity.*;
+import team.terrafirmagreg.jellies.common.entity.jellie.biotite.BiotiteJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.certus.CertusJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.glowberry.GlowberryJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.herbal.HerbalJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.ice.IceJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.latex.LatexJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.lava.LavaJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.pentetic.PenteticJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.phosphorum.PhosphorumJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.plant.PlantJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.rock.RockJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.spring.SpringJellie;
+import team.terrafirmagreg.jellies.common.entity.special.pyritie.PyritieJellie;
 
 @Mod.EventBusSubscriber(modid = Jellies.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @SuppressWarnings("unused")
@@ -20,14 +40,41 @@ public class JelliesEntities {
     public static void init() {
     }
 
-    public static final EntityEntry<SpringJellie> SPRING_JELLIE = Jellies.REGISTRATE.entity("spring", SpringJellie::new, MobCategory.AMBIENT)
-            .properties(p -> p.sized(1F, 1F).clientTrackingRange(8))
-            .loot((prov, ctx) -> prov.add(ctx, new LootTable.Builder()))
-            .tag(JelliesTags.Entities.Genderless)
-            .attributes(SpringJellie::createAttributes)
-            .renderer(() -> JellieBaseRenderer::new)
-            .spawnPlacement(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpringJellie::spawnRules)
-            .register();
+    // Basic
+    public static final EntityEntry<BiotiteJellie> BIOTITE_JELLIE = createJellie("biotite", BiotiteJellie::new, BiotiteJellie::createAttributes, BiotiteJellie::spawnRules,
+            () -> JellieBaseRenderer::new);
+    public static final EntityEntry<CertusJellie> CERTUS_JELLIE = createJellie("certus", CertusJellie::new, CertusJellie::createAttributes, CertusJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<GlowberryJellie> GLOWBERRY_JELLIE = createJellie("glowberry", GlowberryJellie::new, GlowberryJellie::createAttributes, GlowberryJellie::spawnRules,
+            () -> JellieBaseRenderer::new);
+    public static final EntityEntry<HerbalJellie> HERBAL_JELLIE = createJellie("herbal", HerbalJellie::new, HerbalJellie::createAttributes, HerbalJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<IceJellie> ICE_JELLIE = createJellie("ice", IceJellie::new, IceJellie::createAttributes, IceJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<LatexJellie> LATEX_JELLIE = createJellie("latex", LatexJellie::new, LatexJellie::createAttributes, LatexJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<LavaJellie> LAVA_JELLIE = createJellie("lava", LavaJellie::new, LavaJellie::createAttributes, LavaJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<PenteticJellie> PENTETIC_JELLIE = createJellie("pentetic", PenteticJellie::new, PenteticJellie::createAttributes, PenteticJellie::spawnRules,
+            () -> JellieBaseRenderer::new);
+    public static final EntityEntry<PhosphorumJellie> PHOSPHORUM_JELLIE = createJellie("phosphorum", PhosphorumJellie::new, PhosphorumJellie::createAttributes, PhosphorumJellie::spawnRules,
+            () -> JellieBaseRenderer::new);
+    public static final EntityEntry<PlantJellie> PLANT_JELLIE = createJellie("spring", PlantJellie::new, PlantJellie::createAttributes, PlantJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<RockJellie> ROCK_JELLIE = createJellie("rock", RockJellie::new, RockJellie::createAttributes, RockJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<SpringJellie> SPRING_JELLIE = createJellie("spring", SpringJellie::new, SpringJellie::createAttributes, SpringJellie::spawnRules, () -> JellieBaseRenderer::new);
+
+    // Special
+    public static final EntityEntry<PyritieJellie> PYRITIE_JELLIE = createJellie("lilac", PyritieJellie::new, PyritieJellie::createAttributes, PyritieJellie::spawnRules,
+            () -> JellieBaseRenderer::new);
+
+    // Unique
+
+    public static <T extends JellieBase> EntityEntry<T> createJellie(String name, EntityType.EntityFactory<T> factory, Supplier<AttributeSupplier.Builder> attributes,
+            SpawnPlacements.SpawnPredicate<T> spawnPredicate, NonNullSupplier<NonNullFunction<EntityRendererProvider.Context, EntityRenderer<? super T>>> renderer) {
+        return Jellies.REGISTRATE.entity(name, factory, MobCategory.AMBIENT)
+                .properties(p -> p.sized(1F, 1F).clientTrackingRange(8))
+                .loot((prov, ctx) -> prov.add(ctx, new LootTable.Builder()))
+                .tag(JelliesTags.Entities.Genderless)
+                .attributes(attributes)
+                .renderer(renderer)
+                .spawnPlacement(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, spawnPredicate)
+                .register();
+    }
 
     @SubscribeEvent
     public static void onEntityLayerRegister(EntityRenderersEvent.RegisterLayerDefinitions event) {
