@@ -41,5 +41,16 @@
   "item.jellies.jellie.slime_ball.glowberry": "Glowberry Slime Ball",
   "item.jellies.jellie.slime_ball.latex": "Latex Slime Ball",
   "item.jellies.jellie.slime_ball.plant": "Biotite Slime Ball",
+  "item.jellies.spawn_egg.biotite": "Spawn Egg/biotite",
+  "item.jellies.spawn_egg.certus": "Spawn Egg/certus",
+  "item.jellies.spawn_egg.glowberry": "Spawn Egg/glowberry",
+  "item.jellies.spawn_egg.herbal": "Spawn Egg/herbal",
+  "item.jellies.spawn_egg.ice": "Spawn Egg/ice",
+  "item.jellies.spawn_egg.latex": "Spawn Egg/latex",
+  "item.jellies.spawn_egg.lava": "Spawn Egg/lava",
+  "item.jellies.spawn_egg.pentetic": "Spawn Egg/pentetic",
+  "item.jellies.spawn_egg.phosphorum": "Spawn Egg/phosphorum",
+  "item.jellies.spawn_egg.plant": "Spawn Egg/plant",
+  "item.jellies.spawn_egg.rock": "Spawn Egg/rock",
   "item.jellies.spawn_egg.spring": "Spawn Egg/spring"
 }

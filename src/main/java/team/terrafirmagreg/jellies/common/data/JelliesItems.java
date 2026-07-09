@@ -52,7 +52,25 @@ public class JelliesItems {
             .lang("Biotite Slime Ball")
             .register();
 
+    // Basic
+    public static final ItemEntry<ForgeSpawnEggItem> BIOTITE_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.BIOTITE_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> CERTUS_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.CERTUS_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> GLOWBERRY_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.GLOWBERRY_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> HERBAL_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.HERBAL_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> ICE_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.ICE_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> LATEX_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.LATEX_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> LAVA_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.LAVA_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> PENTETIC_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.PENTETIC_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> PHOSPHORUM_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.PHOSPHORUM_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> PLANT_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.PLANT_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> ROCK_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.ROCK_JELLIE, 0x6ce3f5, 0x1ca9eb);
     public static final ItemEntry<ForgeSpawnEggItem> SPRING_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.SPRING_JELLIE, 0x6ce3f5, 0x1ca9eb);
+
+    // Special
+    public static final ItemEntry<ForgeSpawnEggItem> LILAC_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.SPRING_JELLIE, 0x6ce3f5, 0x1ca9eb);
+
+    // Unique
+    // NONE YET
 
     private static <T extends Mob> ItemEntry<ForgeSpawnEggItem> registerSpawnEgg(EntityEntry<T> entity, int color1, int color2) {
         return Jellies.REGISTRATE.item("spawn_egg/" + entity.getId().getPath(),
