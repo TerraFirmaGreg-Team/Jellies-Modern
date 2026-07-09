@@ -13,14 +13,14 @@ public class JelliesMixinPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         boolean isTfgLoaded = isModLoaded("tfg");
+        boolean isGtceuLoaded = isModLoaded("gtceu");
 
-        if (mixinClassName.equals("team.terrafirmagreg.jellies.mixin.client.tfc.entities.EntityTooltipOverwriteMixin")
-                || mixinClassName.equals("team.terrafirmagreg.jellies.mixin.common.registrate.AbstractRegistrateAccessor"))
-            return !isTfgLoaded;
-        if (mixinClassName.equals("team.terrafirmagreg.jellies.mixin.client.tfc.entities.EntityTooltipInjectMixin"))
-            return isTfgLoaded;
-
-        return true;
+        return switch (mixinClassName) {
+            case "team.terrafirmagreg.jellies.mixin.common.registrate.AbstractRegistrateAccessor" -> !isGtceuLoaded;
+            case "team.terrafirmagreg.jellies.mixin.client.tfc.entities.EntityTooltipOverwriteMixin" -> !isTfgLoaded;
+            case "team.terrafirmagreg.jellies.mixin.client.tfc.entities.EntityTooltipInjectMixin" -> isTfgLoaded;
+            default -> true;
+        };
     }
 
     // spotless:off

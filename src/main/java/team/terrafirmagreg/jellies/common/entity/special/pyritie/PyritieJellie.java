@@ -10,6 +10,8 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
+import earth.terrarium.adastra.api.planets.Planet;
+
 import team.terrafirmagreg.jellies.Jellies;
 import team.terrafirmagreg.jellies.common.data.JelliesTags;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
@@ -33,9 +35,8 @@ public class PyritieJellie extends JellieBase {
         return Jellies.id("textures/entity/jellie_special/pyritie.png");
     }
 
-    // TODO: CHANGE TO MOON
     public ResourceKey<Level> getDimension() {
-        return Level.NETHER;
+        return Planet.MOON;
     }
 
     // TODO: SPECIAL OBTAIN
