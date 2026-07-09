@@ -26,7 +26,7 @@ public class JelliesEntities {
             .tag(JelliesTags.Entities.Genderless)
             .attributes(SpringJellie::createAttributes)
             .renderer(() -> JellieBaseRenderer::new)
-            .spawnPlacement(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, JellieBase::spawnRules)
+            .spawnPlacement(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpringJellie::spawnRules)
             .register();
 
     @SubscribeEvent

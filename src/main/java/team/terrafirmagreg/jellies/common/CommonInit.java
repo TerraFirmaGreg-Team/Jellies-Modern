@@ -20,7 +20,6 @@ public class CommonInit {
         JelliesItems.init();
         JelliesCreativeTab.init();
         JelliesEntities.init();
-        JelliesEntityDataSerializers.ENTITY_DATA_SERIALIZERS.register(eventBus);
         JelliesSounds.SOUNDS.register(eventBus);
     }
 
