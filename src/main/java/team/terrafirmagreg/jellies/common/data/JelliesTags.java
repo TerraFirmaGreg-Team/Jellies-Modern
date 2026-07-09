@@ -63,7 +63,7 @@ public class JelliesTags {
         // Unique
 
         // Special
-        public static final TagKey<Biome> LilacJellieHabitat = createBiomeTag("special/lilac_jellie_habitat");
+        public static final TagKey<Biome> PyritieJellieHabitat = createBiomeTag("special/pyritie_jellie_habitat");
 
         private static TagKey<Biome> createBiomeTag(String path) {
             return createBiomeTag(Jellies.id(path));

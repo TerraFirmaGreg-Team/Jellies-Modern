@@ -21,7 +21,7 @@ public class PyritieJellie extends JellieBase {
 
     public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
         return level.getBiome(pos).is(JelliesTags.Biomes.JellieHabitat)
-                && level.getBiome(pos).is(JelliesTags.Biomes.LilacJellieHabitat)
+                && level.getBiome(pos).is(JelliesTags.Biomes.PyritieJellieHabitat)
                 && checkMobSpawnRules(type, level, spawn, pos, rand);
     }
 
