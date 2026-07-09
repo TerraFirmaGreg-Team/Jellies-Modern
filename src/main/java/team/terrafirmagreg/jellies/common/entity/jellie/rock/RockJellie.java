@@ -28,7 +28,7 @@ public class RockJellie extends JellieBase {
     }
 
     public ResourceLocation getTextureLocation() {
-        return Jellies.id("textures/entity/jellie_extra/rock.png");
+        return Jellies.id("textures/entity/jellie/rock.png");
     }
 
     public ResourceKey<Level> getDimension() {

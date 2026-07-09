@@ -31,7 +31,7 @@ import team.terrafirmagreg.jellies.common.entity.jellie.lava.LavaJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.pentetic.PenteticJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.phosphorum.PhosphorumJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.plant.PlantJellie;
-import team.terrafirmagreg.jellies.common.entity.jellie.rock.RockJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.rock.*;
 import team.terrafirmagreg.jellies.common.entity.jellie.spring.SpringJellie;
 import team.terrafirmagreg.jellies.common.entity.special.pyritie.*;
 
@@ -59,12 +59,12 @@ public class JelliesEntities {
             PhosphorumJellie::spawnRules,
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<PlantJellie> PLANT_JELLIE = createJellie("plant", "Plant", PlantJellie::new, PlantJellie::createAttributes, PlantJellie::spawnRules, () -> JellieBaseRenderer::new);
-    public static final EntityEntry<RockJellie> ROCK_JELLIE = createJellie("rock", "Rock", RockJellie::new, RockJellie::createAttributes, RockJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<RockJellie> ROCK_JELLIE = createJellie("rock", "Rock", RockJellie::new, RockJellie::createAttributes, RockJellie::spawnRules, () -> RockJellieRenderer::new);
     public static final EntityEntry<SpringJellie> SPRING_JELLIE = createJellie("spring", "Spring", SpringJellie::new, SpringJellie::createAttributes, SpringJellie::spawnRules,
             () -> JellieBaseRenderer::new);
 
     // Special
-    public static final EntityEntry<PyritieJellie> PYRITIE_JELLIE = createJellie("lilac", "Lilac", PyritieJellie::new, PyritieJellie::createAttributes, PyritieJellie::spawnRules,
+    public static final EntityEntry<PyritieJellie> PYRITIE_JELLIE = createJellie("pyritie", "Pyritie", PyritieJellie::new, PyritieJellie::createAttributes, PyritieJellie::spawnRules,
             () -> PyritieJellieRenderer::new);
 
     // Unique
@@ -92,6 +92,10 @@ public class JelliesEntities {
         event.registerLayerDefinition(JellieBaseModel.LAYER_LOCATION, JellieBaseModel::createInnerBodyLayer);
         event.registerLayerDefinition(JellieBaseOuterLayer.LAYER_LOCATION, JellieBaseModel::createOuterBodyLayer);
         event.registerLayerDefinition(JellieBaseFaceLayer.LAYER_LOCATION, JellieBaseModel::createFaceLayer);
+
+        event.registerLayerDefinition(RockJellieModel.LAYER_LOCATION, RockJellieModel::createInnerBodyLayer);
+        event.registerLayerDefinition(RockJellieOuterLayer.LAYER_LOCATION, RockJellieModel::createOuterBodyLayer);
+        event.registerLayerDefinition(RockJellieFaceLayer.LAYER_LOCATION, RockJellieModel::createFaceLayer);
 
         event.registerLayerDefinition(PyritieJellieModel.LAYER_LOCATION, PyritieJellieModel::createInnerBodyLayer);
         event.registerLayerDefinition(PyritieJellieOuterLayer.LAYER_LOCATION, PyritieJellieModel::createOuterBodyLayer);

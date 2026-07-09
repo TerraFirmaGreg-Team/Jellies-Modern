@@ -67,7 +67,7 @@ public class JelliesItems {
     public static final ItemEntry<ForgeSpawnEggItem> SPRING_JELLIE_SPAWN_EGG = registerSpawnEgg("Spring", JelliesEntities.SPRING_JELLIE, 0x6ce3f5, 0x1ca9eb);
 
     // Special
-    public static final ItemEntry<ForgeSpawnEggItem> LILAC_JELLIE_SPAWN_EGG = registerSpawnEgg("Lilac", JelliesEntities.PYRITIE_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> LILAC_JELLIE_SPAWN_EGG = registerSpawnEgg("Pyritie", JelliesEntities.PYRITIE_JELLIE, 0x6ce3f5, 0x1ca9eb);
 
     // Unique
     // NONE YET

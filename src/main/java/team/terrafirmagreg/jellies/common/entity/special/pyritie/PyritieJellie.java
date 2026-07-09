@@ -26,11 +26,11 @@ public class PyritieJellie extends JellieBase {
     }
 
     public String getVariantName() {
-        return "lilac";
+        return "pyritie";
     }
 
     public ResourceLocation getTextureLocation() {
-        return Jellies.id("textures/entity/jellie_special/lilac.png");
+        return Jellies.id("textures/entity/jellie_special/pyritie.png");
     }
 
     // TODO: CHANGE TO MOON
