@@ -19,31 +19,37 @@ public class JelliesItems {
     public static final ItemEntry<Item> PLANT_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
+            .lang("Plant Slime Ball")
             .register();
 
     public static final ItemEntry<Item> GLOWBERRY_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/glowberry", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
+            .lang("Glowberry Slime Ball")
             .register();
 
     public static final ItemEntry<Item> LATEX_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/latex", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
+            .lang("Latex Slime Ball")
             .register();
 
     public static final ItemEntry<Item> PHOSPHORUM_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
+            .lang("Phosphorum Slime Ball")
             .register();
 
     public static final ItemEntry<Item> HERBAL_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
+            .lang("Herbal Slime Ball")
             .register();
 
     public static final ItemEntry<Item> BIOTITE_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
+            .lang("Biotite Slime Ball")
             .register();
 
     public static final ItemEntry<ForgeSpawnEggItem> SPRING_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.SPRING_JELLIE, 0x6ce3f5, 0x1ca9eb);
