@@ -72,8 +72,8 @@ public class JelliesEntities {
     public static <T extends JellieBase> EntityEntry<T> createJellie(String id, String name, EntityType.EntityFactory<T> factory, Supplier<AttributeSupplier.Builder> attributes,
             SpawnPlacements.SpawnPredicate<T> spawnPredicate, NonNullSupplier<NonNullFunction<EntityRendererProvider.Context, EntityRenderer<? super T>>> renderer) {
         Jellies.REGISTRATE.addDataGenerator(ProviderType.LANG, prov -> {
-            prov.add("entity.jellies." + name + ".female", name + " Jellie");
-            prov.add("entity.jellies." + name + ".male", name + " Jellie");
+            prov.add("entity.jellies." + id + ".female", name + " Jellie");
+            prov.add("entity.jellies." + id + ".male", name + " Jellie");
         });
 
         return Jellies.REGISTRATE.entity(id, factory, MobCategory.AMBIENT)
