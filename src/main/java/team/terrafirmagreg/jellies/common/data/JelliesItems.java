@@ -34,19 +34,19 @@ public class JelliesItems {
             .lang("Latex Slime Ball")
             .register();
 
-    public static final ItemEntry<Item> PHOSPHORUM_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
+    public static final ItemEntry<Item> PHOSPHORUM_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/phosphorum", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
             .lang("Phosphorum Slime Ball")
             .register();
 
-    public static final ItemEntry<Item> HERBAL_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
+    public static final ItemEntry<Item> HERBAL_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/herbal", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
             .lang("Herbal Slime Ball")
             .register();
 
-    public static final ItemEntry<Item> BIOTITE_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
+    public static final ItemEntry<Item> BIOTITE_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/biotite", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
             .lang("Biotite Slime Ball")

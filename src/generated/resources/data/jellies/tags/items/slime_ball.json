@@ -1,7 +1,10 @@
 {
   "values": [
+    "jellies:jellie/slime_ball/plant",
     "jellies:jellie/slime_ball/glowberry",
     "jellies:jellie/slime_ball/latex",
-    "jellies:jellie/slime_ball/plant"
+    "jellies:jellie/slime_ball/phosphorum",
+    "jellies:jellie/slime_ball/herbal",
+    "jellies:jellie/slime_ball/biotite"
   ]
 }
