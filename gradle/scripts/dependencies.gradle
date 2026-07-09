@@ -29,13 +29,16 @@ dependencies {
     // modImplementation "maven.modrinth:rhino:2001.2.2-build.18+forge"
     // modImplementation "maven.modrinth:kubejs:2001.6.5-build.7+forge"
 
-    // GTM
-    compileOnly ("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtm_version}") { transitive = false }
-
     // TFC
     modImplementation ("maven.modrinth:patchouli:1.20.1-84.1-forge") { transitive = false }
     modImplementation ("maven.modrinth:terrafirmacraft:${tfc_version}") { transitive = false }
     // modImplementation ("curse.maven:kubejs-tfc-841001:8283526") { transitive = false }
+
+    // TFG
+    compileOnly ("curse.maven:terrafirmagreg-core-513402:8374716") { transitive = false }
+
+    // GTM
+    modImplementation ("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtm_version}") { transitive = false }
 
     // Ad Astra
     compileOnly ("curse.maven:ad-astra-635042:6262032") { transitive = false }

@@ -125,7 +125,7 @@ public class JelliesRegistrate extends AbstractRegistrate<JelliesRegistrate> {
     }
 
     public static NonNullSupplier<Boolean> getDoDatagen(AbstractRegistrate<?> registrate) {
-        if (LoadingModList.get().getModFileById("tfg") != null) {
+        if (LoadingModList.get().getModFileById("gtceu") != null) {
             return ((com.gregtechceu.gtceu.core.mixins.registrate.AbstractRegistrateAccessor) registrate).getDoDatagen();
         } else {
             return ((team.terrafirmagreg.jellies.mixin.common.registrate.AbstractRegistrateAccessor) registrate).getDoDatagen();
