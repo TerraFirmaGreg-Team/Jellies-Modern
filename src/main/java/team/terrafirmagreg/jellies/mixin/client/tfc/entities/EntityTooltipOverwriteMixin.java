@@ -7,8 +7,6 @@ import static net.dries007.tfc.compat.jade.common.EntityTooltips.OCELOT;
 import static net.dries007.tfc.compat.jade.common.EntityTooltips.PACK_PREDATOR;
 import static net.dries007.tfc.compat.jade.common.EntityTooltips.PREDATOR;
 
-import java.util.Locale;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Unique;
@@ -40,9 +38,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.animal.WaterAnimal;
 
-import team.terrafirmagreg.jellies.Jellies;
 import team.terrafirmagreg.jellies.common.data.JelliesTags;
-import team.terrafirmagreg.jellies.common.entity.jellie.base.JellieBase;
+import team.terrafirmagreg.jellies.common.entity.JellieBase;
 
 @Mixin(value = EntityTooltips.class, remap = false)
 public class EntityTooltipOverwriteMixin {
@@ -71,9 +68,6 @@ public class EntityTooltipOverwriteMixin {
     @Unique
     private static final EntityTooltip JELLIE_BASE = (level, entity, tooltip) -> {
         if (entity instanceof JellieBase jellie) {
-            tooltip.accept(Component.translatable(
-                    (Jellies.MOD_ID + ".tooltip.jellie.variant." + jellie.getVariant().getSerializedName())
-                            .toLowerCase(Locale.ROOT)));
         }
     };
 

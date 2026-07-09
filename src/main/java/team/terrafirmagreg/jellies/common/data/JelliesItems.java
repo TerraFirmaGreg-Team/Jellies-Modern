@@ -31,7 +31,22 @@ public class JelliesItems {
             .tag(JelliesTags.Items.SLIME_BALL)
             .register();
 
-    public static final ItemEntry<ForgeSpawnEggItem> JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.JELLIE_BASE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<Item> PHOSPHORUM_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
+            .defaultModel()
+            .tag(JelliesTags.Items.SLIME_BALL)
+            .register();
+
+    public static final ItemEntry<Item> HERBAL_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
+            .defaultModel()
+            .tag(JelliesTags.Items.SLIME_BALL)
+            .register();
+
+    public static final ItemEntry<Item> BIOTITE_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
+            .defaultModel()
+            .tag(JelliesTags.Items.SLIME_BALL)
+            .register();
+
+    public static final ItemEntry<ForgeSpawnEggItem> SPRING_JELLIE_SPAWN_EGG = registerSpawnEgg(JelliesEntities.SPRING_JELLIE, 0x6ce3f5, 0x1ca9eb);
 
     private static <T extends Mob> ItemEntry<ForgeSpawnEggItem> registerSpawnEgg(EntityEntry<T> entity, int color1, int color2) {
         return Jellies.REGISTRATE.item("spawn_egg/" + entity.getId().getPath(),

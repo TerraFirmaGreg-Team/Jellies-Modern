@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import net.dries007.tfc.common.entities.BrainBreeder;
 import net.dries007.tfc.common.entities.ai.livestock.BreedBehavior;
 
-import team.terrafirmagreg.jellies.common.entity.jellie.base.JellieBase;
+import team.terrafirmagreg.jellies.common.entity.JellieBase;
 
 @Mixin(value = BreedBehavior.class, remap = false)
 public class BreedBehaviorMixin {

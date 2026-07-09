@@ -45,11 +45,26 @@ public class JelliesTags {
 
     public static final class Biomes {
         public static final TagKey<Biome> JellieHabitat = createBiomeTag("jellie_habitat");
-        public static final TagKey<Biome> PlantJellieHabitat = createBiomeTag("nether/plant_jellie_habitat");
+
+        // Regular
+        public static final TagKey<Biome> BiotiteJellieHabitat = createBiomeTag("nether/biotite_jellie_habitat");
+        public static final TagKey<Biome> CertusJellieHabitat = createBiomeTag("moon/certus_jellie_habitat");
         public static final TagKey<Biome> GlowberryJellieHabitat = createBiomeTag("nether/glowberry_jellie_habitat");
-        public static final TagKey<Biome> SpringJellieHabitat = createBiomeTag("nether/spring_jellie_habitat");
+        public static final TagKey<Biome> HerbalJellieHabitat = createBiomeTag("earth/herbal_jellie_habitat");
         public static final TagKey<Biome> IceJellieHabitat = createBiomeTag("nether/ice_jellie_habitat");
+        public static final TagKey<Biome> LatexJellieHabitat = createBiomeTag("nether/latex_jellie_habitat");
         public static final TagKey<Biome> LavaJellieHabitat = createBiomeTag("nether/lava_jellie_habitat");
+        public static final TagKey<Biome> PenteticJellieHabitat = createBiomeTag("mars/pentetic_jellie_habitat");
+        public static final TagKey<Biome> PhosphorumJellieHabitat = createBiomeTag("earth/phosphorum_jellie_habitat");
+        public static final TagKey<Biome> PlantJellieHabitat = createBiomeTag("nether/plant_jellie_habitat");
+        public static final TagKey<Biome> RockJellieHabitat = createBiomeTag("overworld/rock_jellie_habitat");
+        public static final TagKey<Biome> SpringJellieHabitat = createBiomeTag("nether/spring_jellie_habitat");
+
+        // Unique
+
+        // Special
+        public static final TagKey<Biome> LilacJellieHabitat = createBiomeTag("special/lilac_jellie_habitat");
+
 
         private static TagKey<Biome> createBiomeTag(String path) {
             return createBiomeTag(Jellies.id(path));

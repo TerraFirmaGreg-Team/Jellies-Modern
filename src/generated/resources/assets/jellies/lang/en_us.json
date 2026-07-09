@@ -1,7 +1,7 @@
 {
-  "entity.jellies.jellie": "Jellie",
+  "entity.jellies.spring_jellie": "Spring Jellie",
   "item.jellies.jellie.slime_ball.glowberry": "Jellie/slime Ball/glowberry",
   "item.jellies.jellie.slime_ball.latex": "Jellie/slime Ball/latex",
   "item.jellies.jellie.slime_ball.plant": "Jellie/slime Ball/plant",
-  "item.jellies.spawn_egg.jellie": "Spawn Egg/jellie"
+  "item.jellies.spawn_egg.spring_jellie": "Spawn Egg/spring Jellie"
 }

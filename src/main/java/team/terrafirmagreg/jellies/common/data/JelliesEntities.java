@@ -11,7 +11,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import team.terrafirmagreg.jellies.Jellies;
-import team.terrafirmagreg.jellies.common.entity.jellie.base.*;
+import team.terrafirmagreg.jellies.common.entity.*;
+import team.terrafirmagreg.jellies.common.entity.jellie.spring.SpringJellie;
 
 @Mod.EventBusSubscriber(modid = Jellies.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @SuppressWarnings("unused")
@@ -19,11 +20,11 @@ public class JelliesEntities {
     public static void init() {
     }
 
-    public static final EntityEntry<JellieBase> JELLIE_BASE = Jellies.REGISTRATE.entity("jellie", JellieBase::new, MobCategory.AMBIENT)
+    public static final EntityEntry<SpringJellie> SPRING_JELLIE = Jellies.REGISTRATE.entity("spring", SpringJellie::new, MobCategory.AMBIENT)
             .properties(p -> p.sized(1F, 1F).clientTrackingRange(8))
             .loot((prov, ctx) -> prov.add(ctx, new LootTable.Builder()))
             .tag(JelliesTags.Entities.Genderless)
-            .attributes(JellieBase::createAttributes)
+            .attributes(SpringJellie::createAttributes)
             .renderer(() -> JellieBaseRenderer::new)
             .spawnPlacement(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, JellieBase::spawnRules)
             .register();
