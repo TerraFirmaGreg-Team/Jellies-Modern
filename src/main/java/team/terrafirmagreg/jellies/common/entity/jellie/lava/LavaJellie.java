@@ -38,4 +38,6 @@ public class LavaJellie extends JellieBase {
     public float getAmbientalTemperature() {
         return 10F;
     }
+
+    // TODO: EXTRA BREED BEHAVIOUR TO GET LATEX SLIME
 }

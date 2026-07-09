@@ -20,7 +20,9 @@ public class PyritieJellie extends JellieBase {
     }
 
     public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
-        return level.getBiome(pos).is(JelliesTags.Biomes.JellieHabitat) && level.getBiome(pos).is(JelliesTags.Biomes.SpringJellieHabitat) && checkMobSpawnRules(type, level, spawn, pos, rand);
+        return level.getBiome(pos).is(JelliesTags.Biomes.JellieHabitat)
+                && level.getBiome(pos).is(JelliesTags.Biomes.LilacJellieHabitat)
+                && checkMobSpawnRules(type, level, spawn, pos, rand);
     }
 
     public String getVariantName() {
@@ -35,4 +37,6 @@ public class PyritieJellie extends JellieBase {
     public ResourceKey<Level> getDimension() {
         return Level.NETHER;
     }
+
+    // TODO: SPECIAL OBTAIN
 }

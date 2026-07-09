@@ -40,4 +40,6 @@ public class PlantJellie extends JellieBase {
     public Item getProduct() {
         return JelliesItems.PLANT_SLIME_BALL.asItem();
     }
+
+    // TODO: EXTRA BREED BEHAVIOUR TO GET LATEX SLIME
 }
