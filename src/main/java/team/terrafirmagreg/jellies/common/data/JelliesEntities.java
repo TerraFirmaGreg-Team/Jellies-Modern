@@ -54,7 +54,7 @@ public class JelliesEntities {
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<PhosphorumJellie> PHOSPHORUM_JELLIE = createJellie("phosphorum", PhosphorumJellie::new, PhosphorumJellie::createAttributes, PhosphorumJellie::spawnRules,
             () -> JellieBaseRenderer::new);
-    public static final EntityEntry<PlantJellie> PLANT_JELLIE = createJellie("spring", PlantJellie::new, PlantJellie::createAttributes, PlantJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<PlantJellie> PLANT_JELLIE = createJellie("plant", PlantJellie::new, PlantJellie::createAttributes, PlantJellie::spawnRules, () -> JellieBaseRenderer::new);
     public static final EntityEntry<RockJellie> ROCK_JELLIE = createJellie("rock", RockJellie::new, RockJellie::createAttributes, RockJellie::spawnRules, () -> JellieBaseRenderer::new);
     public static final EntityEntry<SpringJellie> SPRING_JELLIE = createJellie("spring", SpringJellie::new, SpringJellie::createAttributes, SpringJellie::spawnRules, () -> JellieBaseRenderer::new);
 
