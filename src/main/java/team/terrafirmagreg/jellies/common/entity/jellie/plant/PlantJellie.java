@@ -1,10 +1,14 @@
 package team.terrafirmagreg.jellies.common.entity.jellie.plant;
 
 import net.dries007.tfc.common.entities.livestock.TFCAnimal;
+import net.dries007.tfc.common.entities.livestock.TFCAnimalProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.Item;
@@ -12,11 +16,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
 import team.terrafirmagreg.jellies.Jellies;
+import team.terrafirmagreg.jellies.common.data.JelliesEntities;
 import team.terrafirmagreg.jellies.common.data.JelliesItems;
 import team.terrafirmagreg.jellies.common.data.JelliesTags;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
+import team.terrafirmagreg.jellies.common.entity.jellie.lava.LavaJellie;
 
 public class PlantJellie extends JellieBase {
+    public boolean birthLatexJellie = false;
+
     public PlantJellie(EntityType<? extends TFCAnimal> animal, Level level) {
         super(animal, level);
     }
@@ -41,5 +49,23 @@ public class PlantJellie extends JellieBase {
         return JelliesItems.PLANT_SLIME_BALL.asItem();
     }
 
-    // TODO: EXTRA BREED BEHAVIOUR TO GET LATEX SLIME
+    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
+        if (other != this && other instanceof LavaJellie mate && !isFertilized() && !mate.isFertilized() && getUUID().compareTo(mate.getUUID()) < 0) {
+            this.onFertilized(mate);
+            mate.birthLatexJellie = true;
+            return null;
+        } else if (other == this && birthLatexJellie) {
+            birthLatexJellie = false;
+            final Entity baby = JelliesEntities.LATEX_JELLIE.get().create(level);
+
+            if (baby instanceof TFCAnimalProperties properties && baby instanceof AgeableMob ageable) {
+                setBabyTraits(properties);
+                return ageable;
+            }
+
+            return null;
+        }
+
+        return super.getBreedOffspring(level, other);
+    }
 }

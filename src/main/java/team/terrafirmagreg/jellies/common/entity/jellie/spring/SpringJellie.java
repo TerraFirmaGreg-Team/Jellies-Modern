@@ -7,10 +7,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
 import team.terrafirmagreg.jellies.Jellies;
+import team.terrafirmagreg.jellies.common.data.JelliesItems;
 import team.terrafirmagreg.jellies.common.data.JelliesTags;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
 
@@ -35,5 +37,7 @@ public class SpringJellie extends JellieBase {
         return Level.NETHER;
     }
 
-    // TODO: SPECIAL INTERACT SYSTEM
+    public Item getProduct() {
+        return JelliesItems.SPRING_SLIME_BALL.asItem();
+    }
 }

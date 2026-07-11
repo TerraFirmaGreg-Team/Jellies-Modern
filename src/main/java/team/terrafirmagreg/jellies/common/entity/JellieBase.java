@@ -39,7 +39,6 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraftforge.common.MinecraftForge;
 
 import team.terrafirmagreg.jellies.common.data.JelliesSounds;
-import team.terrafirmagreg.jellies.common.data.JelliesTags;
 
 public class JellieBase extends TamableMammal {
     public static final EntityDataAccessor<Long> DATA_PRODUCED;
@@ -249,10 +248,9 @@ public class JellieBase extends TamableMammal {
     // region Breeding Stuff
     @Override
     public boolean canMate(Animal otherAnimal) {
-        if (otherAnimal.getClass() != this.getClass()) {
+        if (!(otherAnimal instanceof JellieBase other)) {
             return false;
         } else {
-            TFCAnimal other = (TFCAnimal) otherAnimal;
             return this.isReadyToMate() && other.isReadyToMate();
         }
     }
@@ -288,7 +286,7 @@ public class JellieBase extends TamableMammal {
     // region Other / Unsorted
     @Override
     public TagKey<Item> getFoodTag() {
-        return JelliesTags.Items.JELLIE_FOOD;
+        return TFCTags.Items.FOODS; // JelliesTags.Items.JELLIE_FOOD;
     }
 
     @Override
