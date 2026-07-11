@@ -7,12 +7,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
 import earth.terrarium.adastra.api.planets.Planet;
 
 import team.terrafirmagreg.jellies.Jellies;
+import team.terrafirmagreg.jellies.common.data.JelliesItems;
 import team.terrafirmagreg.jellies.common.data.JelliesTags;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
 
@@ -37,5 +39,7 @@ public class CertusJellie extends JellieBase {
         return Planet.MOON;
     }
 
-    // TODO: PRODUCT IS CERTUS BUDS
+    public Item getProduct() {
+        return JelliesItems.CERTUS_SLIME_BALL.asItem();
+    }
 }
