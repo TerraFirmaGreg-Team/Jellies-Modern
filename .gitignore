@@ -46,3 +46,5 @@ src/generated/resources/assets/tfg/lang/*
 *.jar
 .DS_Store
 .java-version
+
+!/gradle/wrapper/gradle-wrapper.jar
