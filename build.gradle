@@ -30,7 +30,7 @@ apply from: 'gradle/scripts/spotless.gradle'
 base {
     version = "${mod_version}"
     group = "${mod_package}"
-    archivesName = "${mod_name}"
+    archivesName = "${mod_name}-${mod_name_suffix}"
 }
 
 idea {
