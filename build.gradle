@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         // These repositories are only for Gradle plugins
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url = 'https://maven.gnomecraft.net/repository/maven-public' }
         mavenCentral()
         maven {
             name = "NeoForged"
