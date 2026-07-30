@@ -34,6 +34,7 @@ import team.terrafirmagreg.jellies.common.entity.jellie.plant.PlantJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.rock.*;
 import team.terrafirmagreg.jellies.common.entity.jellie.spring.SpringJellie;
 import team.terrafirmagreg.jellies.common.entity.special.pyritie.*;
+import team.terrafirmagreg.jellies.common.entity.special.redeix.*;
 
 @Mod.EventBusSubscriber(modid = Jellies.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @SuppressWarnings("unused")
@@ -66,6 +67,8 @@ public class JelliesEntities {
     // Special
     public static final EntityEntry<PyritieJellie> PYRITIE_JELLIE = createJellie("pyritie", "Pyritie", PyritieJellie::new, PyritieJellie::createAttributes, PyritieJellie::spawnRules,
             () -> PyritieJellieRenderer::new);
+    public static final EntityEntry<RedeixJellie> REDEIX_JELLIE = createJellie("eevee", "Eevee", RedeixJellie::new, RedeixJellie::createAttributes, RedeixJellie::spawnRules,
+            () -> RedeixJellieRenderer::new);
 
     // Unique
 
@@ -100,5 +103,9 @@ public class JelliesEntities {
         event.registerLayerDefinition(PyritieJellieModel.LAYER_LOCATION, PyritieJellieModel::createInnerBodyLayer);
         event.registerLayerDefinition(PyritieJellieOuterLayer.LAYER_LOCATION, PyritieJellieModel::createOuterBodyLayer);
         event.registerLayerDefinition(PyritieJellieFaceLayer.LAYER_LOCATION, PyritieJellieModel::createFaceLayer);
+
+        event.registerLayerDefinition(RedeixJellieModel.LAYER_LOCATION, RedeixJellieModel::createInnerBodyLayer);
+        event.registerLayerDefinition(RedeixJellieOuterLayer.LAYER_LOCATION, RedeixJellieModel::createOuterBodyLayer);
+        event.registerLayerDefinition(RedeixJellieFaceLayer.LAYER_LOCATION, RedeixJellieModel::createFaceLayer);
     }
 }

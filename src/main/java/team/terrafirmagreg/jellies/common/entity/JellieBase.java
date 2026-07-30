@@ -257,7 +257,9 @@ public class JellieBase extends TamableMammal {
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
-        if (other != this && other instanceof JellieBase mate && !isFertilized() && !mate.isFertilized() && getUUID().compareTo(mate.getUUID()) < 0) {
+        JellieBase mainMate = (JellieBase) other;
+
+        if (other != this && other instanceof JellieBase mate && !isFertilized() && !mainMate.isFertilized()) {
             this.onFertilized(mate);
         } else if (other == this) {
             final Entity baby = getEntityTypeForBaby().create(level);

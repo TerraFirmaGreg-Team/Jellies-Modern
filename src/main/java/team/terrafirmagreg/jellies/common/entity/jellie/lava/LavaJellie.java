@@ -48,7 +48,7 @@ public class LavaJellie extends JellieBase {
     }
 
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
-        if (other != this && other instanceof PlantJellie mate && !isFertilized() && !mate.isFertilized() && getUUID().compareTo(mate.getUUID()) < 0) {
+        if (other != this && other instanceof PlantJellie mate && !isFertilized() && !mate.isFertilized()) {
             this.onFertilized(mate);
             mate.birthLatexJellie = true;
             return null;

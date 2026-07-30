@@ -63,8 +63,10 @@ public class BreedBehaviorMixin {
             return;
         }
 
-        cir.setReturnValue(animal.getBrain().getMemory(MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES).get()
+        Optional<AgeableMob> returnTest = animal.getBrain().getMemory(MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES).get()
                 .findClosest(target -> target instanceof JellieBase && target instanceof Animal targetAnimal && animal.canMate(targetAnimal))
-                .map(t -> (AgeableMob) t));
+                .map(t -> (AgeableMob) t);
+
+        cir.setReturnValue(returnTest);
     }
 }
