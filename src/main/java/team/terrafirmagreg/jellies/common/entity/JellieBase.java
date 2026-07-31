@@ -39,6 +39,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraftforge.common.MinecraftForge;
 
 import team.terrafirmagreg.jellies.common.data.JelliesSounds;
+import team.terrafirmagreg.jellies.common.data.JelliesTags;
 
 public class JellieBase extends TamableMammal {
     public static final EntityDataAccessor<Long> DATA_PRODUCED;
@@ -288,7 +289,7 @@ public class JellieBase extends TamableMammal {
     // region Other / Unsorted
     @Override
     public TagKey<Item> getFoodTag() {
-        return TFCTags.Items.FOODS; // JelliesTags.Items.JELLIE_FOOD;
+        return JelliesTags.Items.JELLIE_FOOD;
     }
 
     @Override
