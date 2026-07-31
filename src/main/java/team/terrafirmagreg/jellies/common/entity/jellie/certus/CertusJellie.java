@@ -38,8 +38,4 @@ public class CertusJellie extends JellieBase {
     public ResourceKey<Level> getDimension() {
         return Planet.MOON;
     }
-
-    public Item getProduct() {
-        return JelliesItems.CERTUS_SLIME_BALL.asItem();
-    }
 }
