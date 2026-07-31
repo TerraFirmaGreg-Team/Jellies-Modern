@@ -58,12 +58,6 @@ public class JelliesItems {
             .lang("Spring Slime Ball")
             .register();
 
-    public static final ItemEntry<Item> CERTUS_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/certus", Item::new)
-            .defaultModel()
-            .tag(JelliesTags.Items.SLIME_BALL)
-            .lang("Certus Slime Ball")
-            .register();
-
     // Basic
     public static final ItemEntry<ForgeSpawnEggItem> BIOTITE_JELLIE_SPAWN_EGG = registerSpawnEgg("Biotite", JelliesEntities.BIOTITE_JELLIE, 0x6ce3f5, 0x1ca9eb);
     public static final ItemEntry<ForgeSpawnEggItem> CERTUS_JELLIE_SPAWN_EGG = registerSpawnEgg("Certus", JelliesEntities.CERTUS_JELLIE, 0x6ce3f5, 0x1ca9eb);
@@ -80,6 +74,7 @@ public class JelliesItems {
 
     // Special
     public static final ItemEntry<ForgeSpawnEggItem> PYRITIE_JELLIE_SPAWN_EGG = registerSpawnEgg("Pyritie", JelliesEntities.PYRITIE_JELLIE, 0x6ce3f5, 0x1ca9eb);
+    public static final ItemEntry<ForgeSpawnEggItem> REDEIX_JELLIE_SPAWN_EGG = registerSpawnEgg("Eevee", JelliesEntities.REDEIX_JELLIE, 0x6ce3f5, 0x1ca9eb);
 
     // Unique
     // NONE YET
