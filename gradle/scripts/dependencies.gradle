@@ -35,7 +35,7 @@ dependencies {
     // modImplementation ("curse.maven:kubejs-tfc-841001:8283526") { transitive = false }
 
     // TFG
-    compileOnly ("curse.maven:terrafirmagreg-core-513402:8374716") { transitive = false }
+    compileOnly ("curse.maven:terrafirmagreg-core-513402:8516699") { transitive = false }
 
     // GTM
     modImplementation ("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtm_version}") { transitive = false }
