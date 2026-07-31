@@ -68,48 +68,48 @@ public class JelliesConfig {
 
         public static class JellieEntityConfig {
             @Configurable
-            @Configurable.Comment({ "", "Default: 1" })
+            @Configurable.Comment(value = { "Maximum familiarity that a wild jellie can reach.", "Default: 1" }, localize = true)
             @Configurable.DecimalRange(min = 0, max = 1)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public double familiarityCap = 1;
 
             @Configurable
-            @Configurable.Comment({ "", "Default: 16" })
+            @Configurable.Comment(value = { "How many days it takes a jellie to reach adulthood.", "Default: 16" }, localize = true)
             @Configurable.Range(min = 1)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public int adulthoodDays = 16;
 
             @Configurable
-            @Configurable.Comment({ "", "Default: 120" })
+            @Configurable.Comment(value = { "How many uses a jellie has before becoming old.", "Default: 120" }, localize = true)
             @Configurable.Range(min = 1)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public int uses = 120;
 
             @Configurable
-            @Configurable.Comment({ "", "Default: false" })
+            @Configurable.Comment(value = { "Does jellie eat rotten food.", "Default: false" }, localize = true)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public boolean eatsRottenFood = false;
 
             @Configurable
-            @Configurable.Comment({ "", "Default: 23500" })
+            @Configurable.Comment(value = { "How long it takes for a jellie to produce products.", "Default: 23500" }, localize = true)
             @Configurable.Range(min = 20)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public int produceTicks = 23500;
 
             @Configurable
-            @Configurable.Comment({ "", "Default: 0.15" })
+            @Configurable.Comment(value = { "Minimum familiarity needed for jellie to produce products.", "Default: 0.15" }, localize = true)
             @Configurable.DecimalRange(min = 0, max = 1)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public double produceFamiliarity = 0.15;
 
             @Configurable
-            @Configurable.Comment({ "", "Default: 1" })
+            @Configurable.Comment(value = { "How many children a jellie can have at once.", "Default: 1" }, localize = true)
             @Configurable.Range(min = 0)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public int childCount = 1;
 
             @Configurable
-            @Configurable.Comment({ "", "Default: 32" })
+            @Configurable.Comment(value = { "How long it takes for a jellie to be born.", "Default: 32" }, localize = true)
             @Configurable.Range(min = 1)
             @Configurable.UpdateRestriction(UpdateRestrictions.GAME_RESTART)
             public long gestationDays = 32;
