@@ -74,6 +74,4 @@ public class PyritieJellie extends JellieBase {
     public ResourceKey<Level> getDimension() {
         return Planet.MOON;
     }
-
-    // TODO: SPECIAL OBTAIN
 }
