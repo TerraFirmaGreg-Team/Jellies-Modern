@@ -8,13 +8,14 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import team.terrafirmagreg.jellies.Jellies;
 import team.terrafirmagreg.jellies.common.data.*;
+import team.terrafirmagreg.jellies.config.JelliesConfig;
 
 @SuppressWarnings({ "removal" })
 public class CommonInit {
     public CommonInit() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.register(this);
-
+        JelliesConfig.init();
         Jellies.REGISTRATE.registerEventListeners(eventBus);
 
         JelliesItems.init();

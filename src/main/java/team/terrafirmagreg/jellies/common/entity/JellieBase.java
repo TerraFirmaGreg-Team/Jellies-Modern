@@ -48,60 +48,9 @@ public class JellieBase extends TamableMammal {
         DATA_PRODUCED = SynchedEntityData.defineId(JellieBase.class, EntityHelpers.LONG_SERIALIZER);
     }
 
-    static double familiarityCap = 1;
-    static int adulthoodDays = 32;
-    static int uses = 230;
-    static boolean eatsRottenFood = false;
-    static int produceTicks = 23500;
-    static double produceFamiliarity = 0.15;
-    static int childCount = 2;
-    static long gestationDays = 64;
-
     public JellieBase(EntityType<? extends TFCAnimal> animal, Level level) {
         super(animal, level, JelliesSounds.JELLIE, TFCConfig.SERVER.catConfig);
     }
-
-    // region Config Bypass
-    @Override
-    public float getAdultFamiliarityCap() {
-        return (float) familiarityCap;
-    }
-
-    @Override
-    public int getDaysToAdulthood() {
-        return adulthoodDays;
-    }
-
-    @Override
-    public int getUsesToElderly() {
-        return uses;
-    }
-
-    @Override
-    public boolean eatsRottenFood() {
-        return eatsRottenFood;
-    }
-
-    @Override
-    public boolean isReadyForAnimalProduct() {
-        return getFamiliarity() > produceFamiliarity && hasProduct() && this.level().dimension() == this.getDimension() && isHungry();
-    }
-
-    @Override
-    public long getProductsCooldown() {
-        return Math.max(0, produceTicks + getProducedTick() - Calendars.get(level()).getTicks());
-    }
-
-    @Override
-    public int getChildCount() {
-        return childCount;
-    }
-
-    @Override
-    public long getGestationDays() {
-        return gestationDays;
-    }
-    // endregion
 
     // region Data/Init Stuff
     protected void defineSynchedData() {

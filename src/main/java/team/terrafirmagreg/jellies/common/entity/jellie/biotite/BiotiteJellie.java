@@ -1,6 +1,7 @@
 package team.terrafirmagreg.jellies.common.entity.jellie.biotite;
 
 import net.dries007.tfc.common.entities.livestock.TFCAnimal;
+import net.dries007.tfc.util.calendar.Calendars;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -15,11 +16,46 @@ import team.terrafirmagreg.jellies.Jellies;
 import team.terrafirmagreg.jellies.common.data.JelliesItems;
 import team.terrafirmagreg.jellies.common.data.JelliesTags;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
+import team.terrafirmagreg.jellies.config.JelliesConfig;
 
 public class BiotiteJellie extends JellieBase {
     public BiotiteJellie(EntityType<? extends TFCAnimal> animal, Level level) {
         super(animal, level);
     }
+
+    // region Config Bypass
+    public float getAdultFamiliarityCap() {
+        return (float) JelliesConfig.INSTANCE.entities.biotiteJellie.familiarityCap;
+    }
+
+    public int getDaysToAdulthood() {
+        return JelliesConfig.INSTANCE.entities.biotiteJellie.adulthoodDays;
+    }
+
+    public int getUsesToElderly() {
+        return JelliesConfig.INSTANCE.entities.biotiteJellie.uses;
+    }
+
+    public boolean eatsRottenFood() {
+        return JelliesConfig.INSTANCE.entities.biotiteJellie.eatsRottenFood;
+    }
+
+    public boolean isReadyForAnimalProduct() {
+        return getFamiliarity() > JelliesConfig.INSTANCE.entities.biotiteJellie.produceFamiliarity && hasProduct() && this.level().dimension() == this.getDimension() && isHungry();
+    }
+
+    public long getProductsCooldown() {
+        return Math.max(0, JelliesConfig.INSTANCE.entities.biotiteJellie.produceTicks + getProducedTick() - Calendars.get(level()).getTicks());
+    }
+
+    public int getChildCount() {
+        return JelliesConfig.INSTANCE.entities.biotiteJellie.childCount;
+    }
+
+    public long getGestationDays() {
+        return JelliesConfig.INSTANCE.entities.biotiteJellie.gestationDays;
+    }
+    // endregion
 
     public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
         return level.getBiome(pos).is(JelliesTags.Biomes.JellieHabitat) && level.getBiome(pos).is(JelliesTags.Biomes.BiotiteJellieHabitat) && checkMobSpawnRules(type, level, spawn, pos, rand);
