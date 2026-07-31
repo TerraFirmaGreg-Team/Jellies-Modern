@@ -1,6 +1,7 @@
 package team.terrafirmagreg.jellies.common.entity.jellie.phosphorum;
 
 import net.dries007.tfc.common.entities.livestock.TFCAnimal;
+import net.dries007.tfc.util.Helpers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -8,6 +9,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
@@ -39,5 +42,12 @@ public class PhosphorumJellie extends JellieBase {
 
     public Item getProduct() {
         return JelliesItems.PHOSPHORUM_SLIME_BALL.asItem();
+    }
+
+    public boolean isFood(ItemStack stack) {
+        if (Helpers.isItem(stack, Items.ROTTEN_FLESH))
+            return true;
+
+        return super.isFood(stack);
     }
 }
