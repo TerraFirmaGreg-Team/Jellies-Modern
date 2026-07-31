@@ -8,6 +8,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import team.terrafirmagreg.jellies.Jellies;
 import team.terrafirmagreg.jellies.common.data.*;
+import team.terrafirmagreg.jellies.common.datagen.JelliesDatagen;
 import team.terrafirmagreg.jellies.config.JelliesConfig;
 
 @SuppressWarnings({ "removal" })
@@ -22,6 +23,8 @@ public class CommonInit {
         JelliesCreativeTab.init();
         JelliesEntities.init();
         JelliesSounds.SOUNDS.register(eventBus);
+
+        JelliesDatagen.init();
     }
 
     public static void init() {
