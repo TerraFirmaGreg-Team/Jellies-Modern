@@ -102,4 +102,8 @@ public class LavaJellie extends JellieBase {
 
         return super.getBreedOffspring(level, other);
     }
+
+    public boolean fireImmune() {
+        return true;
+    }
 }
