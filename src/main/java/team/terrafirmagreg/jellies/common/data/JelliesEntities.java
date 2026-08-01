@@ -82,7 +82,7 @@ public class JelliesEntities {
         return Jellies.REGISTRATE.entity(id, factory, MobCategory.AMBIENT)
                 .properties(p -> p.sized(1F, 1F).clientTrackingRange(8))
                 .loot((prov, ctx) -> prov.add(ctx, new LootTable.Builder()))
-                .tag(JelliesTags.Entities.Genderless)
+                .tag(JelliesTags.Entities.JELLIE, JelliesTags.Entities.GENDERLESS)
                 .attributes(attributes)
                 .renderer(renderer)
                 .spawnPlacement(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, spawnPredicate)

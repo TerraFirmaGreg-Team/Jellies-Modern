@@ -32,7 +32,8 @@ public class JelliesTags {
     }
 
     public static final class Entities {
-        public static final TagKey<EntityType<?>> Genderless = createEntityTag("genderless");
+        public static final TagKey<EntityType<?>> JELLIE = createEntityTag("jellie");
+        public static final TagKey<EntityType<?>> GENDERLESS = createEntityTag("genderless");
 
         private static TagKey<EntityType<?>> createEntityTag(String path) {
             return createEntityTag(Jellies.id(path));

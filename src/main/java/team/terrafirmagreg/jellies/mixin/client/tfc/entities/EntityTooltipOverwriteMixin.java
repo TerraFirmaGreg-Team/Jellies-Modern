@@ -86,7 +86,7 @@ public class EntityTooltipOverwriteMixin {
 
         if (entity instanceof TFCAnimalProperties animal) {
             final MutableComponent line1 = Component.empty();
-            boolean genderless = entity.getType().is(JelliesTags.Entities.Genderless);
+            boolean genderless = entity.getType().is(JelliesTags.Entities.GENDERLESS);
             if (!genderless) {
                 line1.append(Helpers.translateEnum(animal.getGender()));
             }
