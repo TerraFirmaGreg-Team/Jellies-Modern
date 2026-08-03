@@ -36,6 +36,7 @@
   "config.jellies.option.redeixJellie": "Eevee Jellie",
   "config.jellies.option.rockJellie": "Rock Jellie",
   "config.jellies.option.springJellie": "Spring Jellie",
+  "config.jellies.option.tetoJellie": "Teto Jellie",
   "config.jellies.option.uses": "Uses",
   "config.jellies.option.uses.comment.0": "How many uses a jellie has before becoming old.",
   "config.jellies.option.uses.comment.1": "Default: 120",
@@ -82,6 +83,9 @@
   "entity.jellies.spring": "Spring Jellie",
   "entity.jellies.spring.female": "Spring Jellie",
   "entity.jellies.spring.male": "Spring Jellie",
+  "entity.jellies.teto": "Teto Jellie",
+  "entity.jellies.teto.female": "Teto Jellie",
+  "entity.jellies.teto.male": "Teto Jellie",
   "item.jellies.jellie.slime_ball.biotite": "Biotite Slime Ball",
   "item.jellies.jellie.slime_ball.glowberry": "Glowberry Slime Ball",
   "item.jellies.jellie.slime_ball.herbal": "Herbal Slime Ball",
@@ -103,5 +107,6 @@
   "item.jellies.spawn_egg.pyritie": "Pyritie Jellie Spawn Egg",
   "item.jellies.spawn_egg.rock": "Rock Jellie Spawn Egg",
   "item.jellies.spawn_egg.spring": "Spring Jellie Spawn Egg",
+  "item.jellies.spawn_egg.teto": "Teto Jellie Spawn Egg",
   "jellies.creative_tab.jellies": "Jellies"
 }

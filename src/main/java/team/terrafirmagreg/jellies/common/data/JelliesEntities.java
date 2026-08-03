@@ -35,6 +35,7 @@ import team.terrafirmagreg.jellies.common.entity.jellie.rock.*;
 import team.terrafirmagreg.jellies.common.entity.jellie.spring.SpringJellie;
 import team.terrafirmagreg.jellies.common.entity.special.pyritie.*;
 import team.terrafirmagreg.jellies.common.entity.special.redeix.*;
+import team.terrafirmagreg.jellies.common.entity.unique.teto.*;
 
 @Mod.EventBusSubscriber(modid = Jellies.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @SuppressWarnings("unused")
@@ -71,6 +72,8 @@ public class JelliesEntities {
             () -> RedeixJellieRenderer::new);
 
     // Unique
+    public static final EntityEntry<TetoJellie> TETO_JELLIE = createJellie("teto", "Teto", TetoJellie::new, TetoJellie::createAttributes, TetoJellie::spawnRules,
+            () -> TetoJellieRenderer::new);
 
     public static <T extends JellieBase> EntityEntry<T> createJellie(String id, String name, EntityType.EntityFactory<T> factory, Supplier<AttributeSupplier.Builder> attributes,
             SpawnPlacements.SpawnPredicate<T> spawnPredicate, NonNullSupplier<NonNullFunction<EntityRendererProvider.Context, EntityRenderer<? super T>>> renderer) {
@@ -107,5 +110,9 @@ public class JelliesEntities {
         event.registerLayerDefinition(RedeixJellieModel.LAYER_LOCATION, RedeixJellieModel::createInnerBodyLayer);
         event.registerLayerDefinition(RedeixJellieOuterLayer.LAYER_LOCATION, RedeixJellieModel::createOuterBodyLayer);
         event.registerLayerDefinition(RedeixJellieFaceLayer.LAYER_LOCATION, RedeixJellieModel::createFaceLayer);
+
+        event.registerLayerDefinition(TetoJellieModel.LAYER_LOCATION, TetoJellieModel::createInnerBodyLayer);
+        event.registerLayerDefinition(TetoJellieOuterLayer.LAYER_LOCATION, TetoJellieModel::createOuterBodyLayer);
+        event.registerLayerDefinition(TetoJellieFaceLayer.LAYER_LOCATION, TetoJellieModel::createFaceLayer);
     }
 }

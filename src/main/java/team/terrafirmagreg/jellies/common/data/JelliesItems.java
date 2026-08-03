@@ -77,7 +77,7 @@ public class JelliesItems {
     public static final ItemEntry<ForgeSpawnEggItem> REDEIX_JELLIE_SPAWN_EGG = registerSpawnEgg("Eevee", JelliesEntities.REDEIX_JELLIE, 0x6ce3f5, 0x1ca9eb);
 
     // Unique
-    // NONE YET
+    public static final ItemEntry<ForgeSpawnEggItem> TETO_JELLIE_SPAWN_EGG = registerSpawnEgg("Teto", JelliesEntities.TETO_JELLIE, 0x6ce3f5, 0x1ca9eb);
 
     private static <T extends Mob> ItemEntry<ForgeSpawnEggItem> registerSpawnEgg(String name, EntityEntry<T> entity, int color1, int color2) {
         return Jellies.REGISTRATE.item("spawn_egg/" + entity.getId().getPath(),

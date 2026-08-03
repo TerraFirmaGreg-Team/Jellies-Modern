@@ -36,6 +36,7 @@
   "config.jellies.option.redeixJellie": "ǝıןןǝſ ǝǝʌǝƎ",
   "config.jellies.option.rockJellie": "ǝıןןǝſ ʞɔoᴚ",
   "config.jellies.option.springJellie": "ǝıןןǝſ buıɹdS",
+  "config.jellies.option.tetoJellie": "ǝıןןǝſ oʇǝ⟘",
   "config.jellies.option.uses": "sǝs∩",
   "config.jellies.option.uses.comment.0": "˙pןo buıɯoɔǝq ǝɹoɟǝq sɐɥ ǝıןןǝظ ɐ sǝsn ʎuɐɯ ʍoH",
   "config.jellies.option.uses.comment.1": "0ᄅƖ :ʇןnɐɟǝᗡ",
@@ -82,6 +83,9 @@
   "entity.jellies.spring": "ǝıןןǝſ buıɹdS",
   "entity.jellies.spring.female": "ǝıןןǝſ buıɹdS",
   "entity.jellies.spring.male": "ǝıןןǝſ buıɹdS",
+  "entity.jellies.teto": "ǝıןןǝſ oʇǝ⟘",
+  "entity.jellies.teto.female": "ǝıןןǝſ oʇǝ⟘",
+  "entity.jellies.teto.male": "ǝıןןǝſ oʇǝ⟘",
   "item.jellies.jellie.slime_ball.biotite": "ןןɐᗺ ǝɯıןS ǝʇıʇoıᗺ",
   "item.jellies.jellie.slime_ball.glowberry": "ןןɐᗺ ǝɯıןS ʎɹɹǝqʍoן⅁",
   "item.jellies.jellie.slime_ball.herbal": "ןןɐᗺ ǝɯıןS ןɐqɹǝH",
@@ -103,5 +107,6 @@
   "item.jellies.spawn_egg.pyritie": "bbƎ uʍɐdS ǝıןןǝſ ǝıʇıɹʎԀ",
   "item.jellies.spawn_egg.rock": "bbƎ uʍɐdS ǝıןןǝſ ʞɔoᴚ",
   "item.jellies.spawn_egg.spring": "bbƎ uʍɐdS ǝıןןǝſ buıɹdS",
+  "item.jellies.spawn_egg.teto": "bbƎ uʍɐdS ǝıןןǝſ oʇǝ⟘",
   "jellies.creative_tab.jellies": "sǝıןןǝſ"
 }

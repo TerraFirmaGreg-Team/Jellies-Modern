@@ -65,6 +65,8 @@ public class JelliesConfig {
         public JellieEntityConfig pyritieJellie = new JellieEntityConfig();
         @Configurable
         public JellieEntityConfig redeixJellie = new JellieEntityConfig();
+        @Configurable
+        public JellieEntityConfig tetoJellie = new JellieEntityConfig();
 
         public static class JellieEntityConfig {
             @Configurable

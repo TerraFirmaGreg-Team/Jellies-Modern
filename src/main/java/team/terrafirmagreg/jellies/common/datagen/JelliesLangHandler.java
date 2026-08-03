@@ -23,6 +23,7 @@ public class JelliesLangHandler {
         provider.add("config.jellies.option.springJellie", "Spring Jellie");
         provider.add("config.jellies.option.pyritieJellie", "Pyritie Jellie");
         provider.add("config.jellies.option.redeixJellie", "Eevee Jellie");
+        provider.add("config.jellies.option.tetoJellie", "Teto Jellie");
 
         provider.add("config.jellies.option.familiarityCap", "Familiarity Cap");
         provider.add("config.jellies.option.familiarityCap.comment.0", "Maximum familiarity that a wild jellie can reach.");
