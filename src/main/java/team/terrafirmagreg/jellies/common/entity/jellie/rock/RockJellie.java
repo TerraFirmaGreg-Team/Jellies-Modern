@@ -3,6 +3,7 @@ package team.terrafirmagreg.jellies.common.entity.jellie.rock;
 import net.dries007.tfc.common.entities.livestock.TFCAnimal;
 import net.dries007.tfc.util.calendar.Calendars;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
@@ -55,17 +56,8 @@ public class RockJellie extends JellieBase {
     // endregion
 
     public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
-        if (pos.getY() >= level.getSeaLevel()) {
-            return false;
-        } else {
-            int i = level.getMaxLocalRawBrightness(pos);
-            int j = 4;
-            if (rand.nextBoolean()) {
-                return false;
-            }
-
-            return i > rand.nextInt(j) ? false : level.getBlockState(pos).isAir();
-        }
+        BlockPos below = pos.below();
+        return level.getMaxLocalRawBrightness(pos) <= 3 && level.getBlockState(pos).isAir() && level.getBlockState(below).isFaceSturdy(level, below, Direction.UP);
     }
 
     public String getVariantName() {
