@@ -12,7 +12,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
 import team.terrafirmagreg.jellies.Jellies;
-import team.terrafirmagreg.jellies.common.data.JelliesTags;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
 import team.terrafirmagreg.jellies.config.JelliesConfig;
 

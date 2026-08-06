@@ -7,21 +7,16 @@ import com.gregtechceu.gtceu.common.data.GTMedicalConditions;
 
 import net.dries007.tfc.common.entities.livestock.TFCAnimal;
 import net.dries007.tfc.util.calendar.Calendars;
-import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 
 import earth.terrarium.adastra.api.planets.Planet;
 import su.terrafirmagreg.core.common.data.tfgt.TFGMedicalConditions;
 
 import team.terrafirmagreg.jellies.Jellies;
-import team.terrafirmagreg.jellies.common.data.JelliesTags;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
 import team.terrafirmagreg.jellies.config.JelliesConfig;
 
