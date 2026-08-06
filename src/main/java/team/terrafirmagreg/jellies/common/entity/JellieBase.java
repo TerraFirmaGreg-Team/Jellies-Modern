@@ -79,7 +79,7 @@ public class JellieBase extends TamableMammal {
     }
 
     public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
-        return level.getBlockState(pos).isAir();
+        return checkMobSpawnRules(type, level, spawn, pos, rand);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
