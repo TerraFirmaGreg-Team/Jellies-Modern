@@ -76,10 +76,6 @@ public class PlantJellie extends JellieBase {
     }
     // endregion
 
-    public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
-        return level.getBiome(pos).is(JelliesTags.Biomes.JellieHabitat) && level.getBiome(pos).is(JelliesTags.Biomes.PlantJellieHabitat) && checkMobSpawnRules(type, level, spawn, pos, rand);
-    }
-
     public String getVariantName() {
         return "plant";
     }

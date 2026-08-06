@@ -60,10 +60,6 @@ public class PhosphorumJellie extends JellieBase {
     }
     // endregion
 
-    public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
-        return level.getBiome(pos).is(JelliesTags.Biomes.JellieHabitat) && level.getBiome(pos).is(JelliesTags.Biomes.PhosphorumJellieHabitat) && checkMobSpawnRules(type, level, spawn, pos, rand);
-    }
-
     public String getVariantName() {
         return "phosphorum";
     }

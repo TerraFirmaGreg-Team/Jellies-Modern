@@ -1,5 +1,8 @@
 package team.terrafirmagreg.jellies.common.entity;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.LevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.client.ClientHelpers;
@@ -73,6 +76,10 @@ public class JellieBase extends TamableMammal {
         this.setGender(Gender.FEMALE);
         this.setBaby(this.random.nextFloat() < 0.1F);
         return spawnData;
+    }
+
+    public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
+        return level.getBlockState(pos).isAir();
     }
 
     public static AttributeSupplier.Builder createAttributes() {

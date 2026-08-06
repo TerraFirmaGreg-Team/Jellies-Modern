@@ -56,7 +56,17 @@ public class RockJellie extends JellieBase {
     // endregion
 
     public static boolean spawnRules(EntityType<? extends JellieBase> type, LevelAccessor level, MobSpawnType spawn, BlockPos pos, RandomSource rand) {
-        return level.getBiome(pos).is(JelliesTags.Biomes.JellieHabitat) && level.getBiome(pos).is(JelliesTags.Biomes.RockJellieHabitat) && checkMobSpawnRules(type, level, spawn, pos, rand);
+        if (pos.getY() >= level.getSeaLevel()) {
+            return false;
+        } else {
+            int i = level.getMaxLocalRawBrightness(pos);
+            int j = 4;
+            if (rand.nextBoolean()) {
+                return false;
+            }
+
+            return i > rand.nextInt(j) ? false : level.getBlockState(pos).isAir();
+        }
     }
 
     public String getVariantName() {
