@@ -5,6 +5,7 @@
 ## [0.1.5] - ???
 ### Changes
 - Teto jellie can now eat bread.
+- Teto jellie can now be obtained.
 - Added nutritional mash as the main food source of jellies.
 
 ## [0.1.4] - ???
