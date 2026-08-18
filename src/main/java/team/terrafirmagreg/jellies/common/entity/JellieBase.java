@@ -124,6 +124,7 @@ public class JellieBase extends TamableMammal {
             if (this.isReadyForAnimalProduct()) {
                 return this.productEvent(player, held);
             } else {
+                this.setPersistenceRequired();
                 this.eatFood(held, hand, player);
             }
 

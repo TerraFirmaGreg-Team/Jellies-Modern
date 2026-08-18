@@ -45,44 +45,53 @@ public class JelliesEntities {
 
     // Basic
     public static final EntityEntry<BiotiteJellie> BIOTITE_JELLIE = createJellie("biotite", "Biotite", BiotiteJellie::new, BiotiteJellie::createAttributes, BiotiteJellie::spawnRules,
+            MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
-    public static final EntityEntry<CertusJellie> CERTUS_JELLIE = createJellie("certus", "Certus", CertusJellie::new, CertusJellie::createAttributes, CertusJellie::spawnRules,
+    public static final EntityEntry<CertusJellie> CERTUS_JELLIE = createJellie("certus", "Certus", CertusJellie::new, CertusJellie::createAttributes, CertusJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<GlowberryJellie> GLOWBERRY_JELLIE = createJellie("glowberry", "Glowberry", GlowberryJellie::new, GlowberryJellie::createAttributes, GlowberryJellie::spawnRules,
+            MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
-    public static final EntityEntry<HerbalJellie> HERBAL_JELLIE = createJellie("herbal", "Herbal", HerbalJellie::new, HerbalJellie::createAttributes, HerbalJellie::spawnRules,
+    public static final EntityEntry<HerbalJellie> HERBAL_JELLIE = createJellie("herbal", "Herbal", HerbalJellie::new, HerbalJellie::createAttributes, HerbalJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
-    public static final EntityEntry<IceJellie> ICE_JELLIE = createJellie("ice", "Ice", IceJellie::new, IceJellie::createAttributes, IceJellie::spawnRules, () -> JellieBaseRenderer::new);
-    public static final EntityEntry<LatexJellie> LATEX_JELLIE = createJellie("latex", "Latex", LatexJellie::new, LatexJellie::createAttributes, LatexJellie::spawnRules, () -> JellieBaseRenderer::new);
-    public static final EntityEntry<LavaJellie> LAVA_JELLIE = createJellie("lava", "Lava", LavaJellie::new, LavaJellie::createAttributes, LavaJellie::spawnRules, () -> JellieBaseRenderer::new);
+    public static final EntityEntry<IceJellie> ICE_JELLIE = createJellie("ice", "Ice", IceJellie::new, IceJellie::createAttributes, IceJellie::spawnRules, MobCategory.AMBIENT,
+            () -> JellieBaseRenderer::new);
+    public static final EntityEntry<LatexJellie> LATEX_JELLIE = createJellie("latex", "Latex", LatexJellie::new, LatexJellie::createAttributes, LatexJellie::spawnRules, MobCategory.AMBIENT,
+            () -> JellieBaseRenderer::new);
+    public static final EntityEntry<LavaJellie> LAVA_JELLIE = createJellie("lava", "Lava", LavaJellie::new, LavaJellie::createAttributes, LavaJellie::spawnRules, MobCategory.AMBIENT,
+            () -> JellieBaseRenderer::new);
     public static final EntityEntry<PenteticJellie> PENTETIC_JELLIE = createJellie("pentetic", "Pentetic", PenteticJellie::new, PenteticJellie::createAttributes, PenteticJellie::spawnRules,
+            MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<PhosphorumJellie> PHOSPHORUM_JELLIE = createJellie("phosphorum", "Phosphorum", PhosphorumJellie::new, PhosphorumJellie::createAttributes,
-            PhosphorumJellie::spawnRules,
+            PhosphorumJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
-    public static final EntityEntry<PlantJellie> PLANT_JELLIE = createJellie("plant", "Plant", PlantJellie::new, PlantJellie::createAttributes, PlantJellie::spawnRules, () -> JellieBaseRenderer::new);
-    public static final EntityEntry<RockJellie> ROCK_JELLIE = createJellie("rock", "Rock", RockJellie::new, RockJellie::createAttributes, RockJellie::spawnRules, () -> RockJellieRenderer::new);
-    public static final EntityEntry<SpringJellie> SPRING_JELLIE = createJellie("spring", "Spring", SpringJellie::new, SpringJellie::createAttributes, SpringJellie::spawnRules,
+    public static final EntityEntry<PlantJellie> PLANT_JELLIE = createJellie("plant", "Plant", PlantJellie::new, PlantJellie::createAttributes, PlantJellie::spawnRules, MobCategory.AMBIENT,
+            () -> JellieBaseRenderer::new);
+    public static final EntityEntry<RockJellie> ROCK_JELLIE = createJellie("rock", "Rock", RockJellie::new, RockJellie::createAttributes, RockJellie::spawnRules, MobCategory.AXOLOTLS,
+            () -> RockJellieRenderer::new);
+    public static final EntityEntry<SpringJellie> SPRING_JELLIE = createJellie("spring", "Spring", SpringJellie::new, SpringJellie::createAttributes, SpringJellie::spawnRules, MobCategory.AMBIENT,
             () -> JellieBaseRenderer::new);
 
     // Special
     public static final EntityEntry<PyritieJellie> PYRITIE_JELLIE = createJellie("pyritie", "Pyritie", PyritieJellie::new, PyritieJellie::createAttributes, PyritieJellie::spawnRules,
+            MobCategory.AXOLOTLS,
             () -> PyritieJellieRenderer::new);
-    public static final EntityEntry<RedeixJellie> REDEIX_JELLIE = createJellie("eevee", "Eevee", RedeixJellie::new, RedeixJellie::createAttributes, RedeixJellie::spawnRules,
+    public static final EntityEntry<RedeixJellie> REDEIX_JELLIE = createJellie("eevee", "Eevee", RedeixJellie::new, RedeixJellie::createAttributes, RedeixJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> RedeixJellieRenderer::new);
 
     // Unique
-    public static final EntityEntry<TetoJellie> TETO_JELLIE = createJellie("teto", "Teto", TetoJellie::new, TetoJellie::createAttributes, TetoJellie::spawnRules,
+    public static final EntityEntry<TetoJellie> TETO_JELLIE = createJellie("teto", "Teto", TetoJellie::new, TetoJellie::createAttributes, TetoJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> TetoJellieRenderer::new);
 
     public static <T extends JellieBase> EntityEntry<T> createJellie(String id, String name, EntityType.EntityFactory<T> factory, Supplier<AttributeSupplier.Builder> attributes,
-            SpawnPlacements.SpawnPredicate<T> spawnPredicate, NonNullSupplier<NonNullFunction<EntityRendererProvider.Context, EntityRenderer<? super T>>> renderer) {
+            SpawnPlacements.SpawnPredicate<T> spawnPredicate, MobCategory mobCategory, NonNullSupplier<NonNullFunction<EntityRendererProvider.Context, EntityRenderer<? super T>>> renderer) {
         Jellies.REGISTRATE.addDataGenerator(ProviderType.LANG, prov -> {
             prov.add("entity.jellies." + id + ".female", name + " Jellie");
             prov.add("entity.jellies." + id + ".male", name + " Jellie");
         });
 
-        return Jellies.REGISTRATE.entity(id, factory, MobCategory.AMBIENT)
+        return Jellies.REGISTRATE.entity(id, factory, mobCategory)
                 .properties(p -> p.sized(1F, 1F).clientTrackingRange(8))
                 .loot((prov, ctx) -> prov.add(ctx, new LootTable.Builder()))
                 .tag(JelliesTags.Entities.JELLIE, JelliesTags.Entities.GENDERLESS)
