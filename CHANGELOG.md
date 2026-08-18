@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## [0.1.5] - ???
+## [0.1.5] - 19-08-2026
 ### Changes
 - Teto jellie can now eat bread.
 - Teto jellie can now be obtained.
