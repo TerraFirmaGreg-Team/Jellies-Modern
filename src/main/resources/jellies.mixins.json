@@ -2,7 +2,8 @@
     "mixins": [
         "common.registrate.AbstractRegistrateAccessor",
         "common.minecraft.ModelProviderMixin",
-        "common.tfc.entities.BreedBehaviorMixin"
+        "common.tfc.entities.BreedBehaviorMixin",
+        "common.tfc.items.FirestarterItemMixin"
     ],
     "minVersion": "0.8",
     "package": "team.terrafirmagreg.jellies.mixin",

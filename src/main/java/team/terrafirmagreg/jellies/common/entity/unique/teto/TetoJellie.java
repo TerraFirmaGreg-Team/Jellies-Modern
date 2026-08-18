@@ -77,14 +77,18 @@ public class TetoJellie extends JellieBase {
     }
 
     public boolean isFood(ItemStack stack) {
-        if (Helpers.isItem(stack, TFCItems.FOOD.get(Food.BARLEY_BREAD).get()) ||
+        if (isBread(stack))
+            return true;
+
+        return super.isFood(stack);
+    }
+
+    public static boolean isBread(ItemStack stack) {
+        return Helpers.isItem(stack, TFCItems.FOOD.get(Food.BARLEY_BREAD).get()) ||
                 Helpers.isItem(stack, TFCItems.FOOD.get(Food.MAIZE_BREAD).get()) ||
                 Helpers.isItem(stack, TFCItems.FOOD.get(Food.OAT_BREAD).get()) ||
                 Helpers.isItem(stack, TFCItems.FOOD.get(Food.RYE_BREAD).get()) ||
                 Helpers.isItem(stack, TFCItems.FOOD.get(Food.RICE_BREAD).get()) ||
-                Helpers.isItem(stack, TFCItems.FOOD.get(Food.WHEAT_BREAD).get()))
-            return true;
-
-        return super.isFood(stack);
+                Helpers.isItem(stack, TFCItems.FOOD.get(Food.WHEAT_BREAD).get());
     }
 }
