@@ -16,6 +16,12 @@ public class JelliesItems {
     public static void init() {
     }
 
+    public static final ItemEntry<Item> JELLIE_FOOD = Jellies.REGISTRATE.item("jellie/food/nutritional_mash", Item::new)
+            .defaultModel()
+            .tag(JelliesTags.Items.JELLIE_FOOD)
+            .lang("Nutritional Mash")
+            .register();
+
     public static final ItemEntry<Item> PLANT_SLIME_BALL = Jellies.REGISTRATE.item("jellie/slime_ball/plant", Item::new)
             .defaultModel()
             .tag(JelliesTags.Items.SLIME_BALL)
