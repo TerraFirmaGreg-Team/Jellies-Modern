@@ -5,49 +5,40 @@ import java.util.List;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
 
 import net.dries007.tfc.common.blocks.devices.FirepitBlock;
 import net.dries007.tfc.common.items.FirestarterItem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
 import team.terrafirmagreg.jellies.common.data.JelliesEntities;
 import team.terrafirmagreg.jellies.common.entity.unique.teto.TetoJellie;
 
-@Mixin(value = FirestarterItem.class)
+@Mixin(value = FirestarterItem.class, remap = false)
 public class FirestarterItemMixin {
-    @WrapOperation(method = "onUseTick", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/util/events/StartFireEvent;startFire(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)Z"), remap = false)
-    private boolean wrapStartFire(
-            Level level,
-            BlockPos pos,
-            BlockState state,
-            Direction direction,
-            Player player,
-            ItemStack stack,
-            Operation<Boolean> original) {
-        BlockPos abovePos = pos.above();
+    @Inject(method = "onUseTick", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/util/events/StartFireEvent;startFire(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)Z"), remap = true)
+    public void jellies$injectBeforeStartFire(Level level, LivingEntity livingEntityIn, ItemStack stack, int countLeft, CallbackInfo ci, @Local(name = "abovePos") BlockPos abovePos) {
         if (FirepitBlock.canSurvive(level, abovePos)) {
             List<ItemEntity> items = level.getEntitiesOfClass(ItemEntity.class, new AABB((double) abovePos.getX() - (double) 0.5F, (double) abovePos.getY(), (double) abovePos.getZ() - (double) 0.5F,
                     (double) abovePos.getX() + (double) 1.5F, (double) (abovePos.getY() + 1), (double) abovePos.getZ() + (double) 1.5F));
-            List<ItemEntity> usableItems = new ArrayList();
+            List<ItemEntity> usableItems = new ArrayList<>();
             int red_offering = 0;
             int bread_offering = 0;
 
@@ -87,10 +78,8 @@ public class FirestarterItemMixin {
                     }
                 }
 
-                return false;
+                return;
             }
         }
-
-        return original.call(level, pos, state, direction, player, stack);
     }
 }
