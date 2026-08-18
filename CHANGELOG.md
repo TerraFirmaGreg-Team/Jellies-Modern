@@ -6,6 +6,7 @@
 ### Changes
 - Teto jellie can now eat bread.
 - Teto jellie can now be obtained.
+- Certus jellie now has a product.
 - Added nutritional mash as the main food source of jellies.
 - Most jellies are now part of axolotl spawn group except for nether ones which stayed as ambient.
 - Jellies are now persistent if fed at least once.

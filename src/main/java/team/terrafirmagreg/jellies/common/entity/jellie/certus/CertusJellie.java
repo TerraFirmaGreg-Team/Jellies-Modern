@@ -5,8 +5,10 @@ import net.dries007.tfc.util.calendar.Calendars;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
+import appeng.core.definitions.AEBlocks;
 import earth.terrarium.adastra.api.planets.Planet;
 
 import team.terrafirmagreg.jellies.Jellies;
@@ -62,5 +64,9 @@ public class CertusJellie extends JellieBase {
 
     public ResourceKey<Level> getDimension() {
         return Planet.MOON;
+    }
+
+    public Item getProduct() {
+        return AEBlocks.LARGE_QUARTZ_BUD.block().asItem();
     }
 }

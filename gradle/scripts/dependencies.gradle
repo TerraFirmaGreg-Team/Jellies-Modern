@@ -46,4 +46,8 @@ dependencies {
     // modImplementation ("curse.maven:botarium-704113:5486070") { transitive = false }
     // modImplementation ("curse.maven:resourceful-lib-570073:5659871") { transitive = false }
     // modImplementation ("curse.maven:resourceful-config-714059:6231176") { transitive = false }
+
+    // AE2
+    // modImplementation "curse.maven:guideme-1173950:7013686"
+    compileOnly ("appeng:appliedenergistics2-forge:15.4.10-cosmolite.38") { transitive = false }
 }
