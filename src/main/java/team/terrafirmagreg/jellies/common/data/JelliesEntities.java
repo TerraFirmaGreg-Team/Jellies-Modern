@@ -45,7 +45,7 @@ public class JelliesEntities {
 
     // Basic
     public static final EntityEntry<BiotiteJellie> BIOTITE_JELLIE = createJellie("biotite", "Biotite", BiotiteJellie::new, BiotiteJellie::createAttributes, BiotiteJellie::spawnRules,
-            MobCategory.AXOLOTLS,
+            MobCategory.AMBIENT,
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<CertusJellie> CERTUS_JELLIE = createJellie("certus", "Certus", CertusJellie::new, CertusJellie::createAttributes, CertusJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);

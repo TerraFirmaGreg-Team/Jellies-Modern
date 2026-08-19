@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## [0.1.6] - 19-08-2026
+### Hotfixes
+- Biotite jellie is also part of ambient spawn group.
+
 ## [0.1.5] - 19-08-2026
 ### Changes
 - Teto jellie can now eat bread.
