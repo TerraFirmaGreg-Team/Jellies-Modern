@@ -6,7 +6,6 @@ import net.dries007.tfc.util.calendar.Calendars;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -67,8 +66,8 @@ public class PhosphorumJellie extends JellieBase {
         return Level.OVERWORLD;
     }
 
-    public Item getProduct() {
-        return JelliesItems.PHOSPHORUM_SLIME_BALL.asItem();
+    public ItemStack getProduct() {
+        return JelliesItems.PHOSPHORUM_SLIME_BALL.asStack(4);
     }
 
     public boolean isFood(ItemStack stack) {
