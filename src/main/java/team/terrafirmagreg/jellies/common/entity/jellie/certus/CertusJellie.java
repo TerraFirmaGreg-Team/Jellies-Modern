@@ -8,7 +8,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
-import appeng.core.definitions.AEBlocks;
+import appeng.core.definitions.AEItems;
 import earth.terrarium.adastra.api.planets.Planet;
 
 import team.terrafirmagreg.jellies.Jellies;
@@ -67,6 +67,6 @@ public class CertusJellie extends JellieBase {
     }
 
     public Item getProduct() {
-        return AEBlocks.LARGE_QUARTZ_BUD.block().asItem();
+        return AEItems.CERTUS_QUARTZ_CRYSTAL.m_5456_().asItem();
     }
 }
