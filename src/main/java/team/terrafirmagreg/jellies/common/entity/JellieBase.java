@@ -100,7 +100,7 @@ public class JellieBase extends TamableMammal {
         return null;
     }
 
-    public Item getProduct() {
+    public ItemStack getProduct() {
         return null;
     }
 
@@ -142,7 +142,7 @@ public class JellieBase extends TamableMammal {
     }
 
     public InteractionResult productEvent(Player player, ItemStack held) {
-        AnimalProductEvent event = new AnimalProductEvent(this.level(), this.blockPosition(), player, this, this.getProduct().getDefaultInstance(), held, 1);
+        AnimalProductEvent event = new AnimalProductEvent(this.level(), this.blockPosition(), player, this, this.getProduct(), held, 1);
         if (!MinecraftForge.EVENT_BUS.post(event)) {
             if (event.getLevel().isClientSide) {
                 return InteractionResult.PASS;

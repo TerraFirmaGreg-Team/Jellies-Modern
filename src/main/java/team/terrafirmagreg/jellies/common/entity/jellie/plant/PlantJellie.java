@@ -15,7 +15,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -84,8 +83,8 @@ public class PlantJellie extends JellieBase {
         return Level.NETHER;
     }
 
-    public Item getProduct() {
-        return JelliesItems.PLANT_SLIME_BALL.asItem();
+    public ItemStack getProduct() {
+        return JelliesItems.PLANT_SLIME_BALL.asStack(4);
     }
 
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {

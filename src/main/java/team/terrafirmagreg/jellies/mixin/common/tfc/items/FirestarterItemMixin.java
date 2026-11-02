@@ -33,7 +33,7 @@ import team.terrafirmagreg.jellies.common.entity.unique.teto.TetoJellie;
 
 @Mixin(value = FirestarterItem.class, remap = false)
 public class FirestarterItemMixin {
-    @Inject(method = "onUseTick", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/util/events/StartFireEvent;startFire(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)Z"), remap = true)
+    @Inject(method = "onUseTick", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/util/events/StartFireEvent;startFire(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)Z", remap = false), remap = true)
     public void jellies$injectBeforeStartFire(Level level, LivingEntity livingEntityIn, ItemStack stack, int countLeft, CallbackInfo ci, @Local(name = "abovePos") BlockPos abovePos) {
         if (FirepitBlock.canSurvive(level, abovePos)) {
             List<ItemEntity> items = level.getEntitiesOfClass(ItemEntity.class, new AABB((double) abovePos.getX() - (double) 0.5F, (double) abovePos.getY(), (double) abovePos.getZ() - (double) 0.5F,
