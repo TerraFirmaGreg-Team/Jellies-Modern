@@ -53,7 +53,7 @@ public class JelliesTags {
         public static final TagKey<Biome> GlowberryJellieHabitat = createBiomeTag("nether/glowberry_jellie_habitat");
         public static final TagKey<Biome> HerbalJellieHabitat = createBiomeTag("earth/herbal_jellie_habitat");
         public static final TagKey<Biome> IceJellieHabitat = createBiomeTag("nether/ice_jellie_habitat");
-        public static final TagKey<Biome> LatexJellieHabitat = createBiomeTag("nether/latex_jellie_habitat");
+        public static final TagKey<Biome> MilkJellieHabitat = createBiomeTag("nether/milk_jellie_habitat");
         public static final TagKey<Biome> LavaJellieHabitat = createBiomeTag("nether/lava_jellie_habitat");
         public static final TagKey<Biome> PenteticJellieHabitat = createBiomeTag("mars/pentetic_jellie_habitat");
         public static final TagKey<Biome> PhosphorumJellieHabitat = createBiomeTag("earth/phosphorum_jellie_habitat");

@@ -18,7 +18,7 @@ import team.terrafirmagreg.jellies.common.entity.jellie.plant.PlantJellie;
 import team.terrafirmagreg.jellies.config.JelliesConfig;
 
 public class LavaJellie extends JellieBase {
-    public boolean birthLatexJellie = false;
+    public boolean birthMilkJellie = false;
 
     public LavaJellie(EntityType<? extends TFCAnimal> animal, Level level) {
         super(animal, level);
@@ -77,11 +77,11 @@ public class LavaJellie extends JellieBase {
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
         if (other != this && other instanceof PlantJellie mate && !isFertilized() && !mate.isFertilized()) {
             this.onFertilized(mate);
-            mate.birthLatexJellie = true;
+            mate.birthMilkJellie = true;
             return null;
         } else if (other == this) {
-            birthLatexJellie = false;
-            final Entity baby = JelliesEntities.LATEX_JELLIE.get().create(level);
+            birthMilkJellie = false;
+            final Entity baby = JelliesEntities.MILK_JELLIE.get().create(level);
 
             if (baby instanceof TFCAnimalProperties properties && baby instanceof AgeableMob ageable) {
                 setBabyTraits(properties);

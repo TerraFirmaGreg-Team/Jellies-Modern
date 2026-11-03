@@ -14,7 +14,7 @@ public class JelliesLangHandler {
         provider.add("config.jellies.option.glowberryJellie", "Glowberry Jellie");
         provider.add("config.jellies.option.herbalJellie", "Herbal Jellie");
         provider.add("config.jellies.option.iceJellie", "Ice Jellie");
-        provider.add("config.jellies.option.latexJellie", "Latex Jellie");
+        provider.add("config.jellies.option.milkJellie", "Milk Jellie");
         provider.add("config.jellies.option.lavaJellie", "Lava Jellie");
         provider.add("config.jellies.option.penteticJellie", "Pentetic Jellie");
         provider.add("config.jellies.option.phosphorumJellie", "Phosphorum Jellie");

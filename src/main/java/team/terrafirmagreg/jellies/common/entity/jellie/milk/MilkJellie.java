@@ -1,4 +1,4 @@
-package team.terrafirmagreg.jellies.common.entity.jellie.latex;
+package team.terrafirmagreg.jellies.common.entity.jellie.milk;
 
 import net.dries007.tfc.common.entities.livestock.TFCAnimal;
 import net.dries007.tfc.util.calendar.Calendars;
@@ -13,51 +13,51 @@ import team.terrafirmagreg.jellies.common.data.JelliesItems;
 import team.terrafirmagreg.jellies.common.entity.JellieBase;
 import team.terrafirmagreg.jellies.config.JelliesConfig;
 
-public class LatexJellie extends JellieBase {
-    public LatexJellie(EntityType<? extends TFCAnimal> animal, Level level) {
+public class MilkJellie extends JellieBase {
+    public MilkJellie(EntityType<? extends TFCAnimal> animal, Level level) {
         super(animal, level);
     }
 
     // region Config Bypass
     public float getAdultFamiliarityCap() {
-        return (float) JelliesConfig.INSTANCE.entities.latexJellie.familiarityCap;
+        return (float) JelliesConfig.INSTANCE.entities.milkJellie.familiarityCap;
     }
 
     public int getDaysToAdulthood() {
-        return JelliesConfig.INSTANCE.entities.latexJellie.adulthoodDays;
+        return JelliesConfig.INSTANCE.entities.milkJellie.adulthoodDays;
     }
 
     public int getUsesToElderly() {
-        return JelliesConfig.INSTANCE.entities.latexJellie.uses;
+        return JelliesConfig.INSTANCE.entities.milkJellie.uses;
     }
 
     public boolean eatsRottenFood() {
-        return JelliesConfig.INSTANCE.entities.latexJellie.eatsRottenFood;
+        return JelliesConfig.INSTANCE.entities.milkJellie.eatsRottenFood;
     }
 
     public boolean isReadyForAnimalProduct() {
-        return getFamiliarity() > JelliesConfig.INSTANCE.entities.latexJellie.produceFamiliarity && hasProduct() && this.level().dimension() == this.getDimension() && isHungry();
+        return getFamiliarity() > JelliesConfig.INSTANCE.entities.milkJellie.produceFamiliarity && hasProduct() && this.level().dimension() == this.getDimension() && isHungry();
     }
 
     public long getProductsCooldown() {
-        return Math.max(0, JelliesConfig.INSTANCE.entities.latexJellie.produceTicks + getProducedTick() - Calendars.get(level()).getTicks());
+        return Math.max(0, JelliesConfig.INSTANCE.entities.milkJellie.produceTicks + getProducedTick() - Calendars.get(level()).getTicks());
     }
 
     public int getChildCount() {
-        return JelliesConfig.INSTANCE.entities.latexJellie.childCount;
+        return JelliesConfig.INSTANCE.entities.milkJellie.childCount;
     }
 
     public long getGestationDays() {
-        return JelliesConfig.INSTANCE.entities.latexJellie.gestationDays;
+        return JelliesConfig.INSTANCE.entities.milkJellie.gestationDays;
     }
     // endregion
 
     public String getVariantName() {
-        return "latex";
+        return "milk";
     }
 
     public ResourceLocation getTextureLocation() {
-        return Jellies.id("textures/entity/jellie/latex.png");
+        return Jellies.id("textures/entity/jellie/milk.png");
     }
 
     public ResourceKey<Level> getDimension() {
@@ -65,6 +65,6 @@ public class LatexJellie extends JellieBase {
     }
 
     public ItemStack getProduct() {
-        return JelliesItems.LATEX_SLIME_BALL.asStack();
+        return JelliesItems.MILK_SLIME_BALL.asStack();
     }
 }

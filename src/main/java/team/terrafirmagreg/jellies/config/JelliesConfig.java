@@ -48,7 +48,7 @@ public class JelliesConfig {
         @Configurable
         public JellieEntityConfig iceJellie = new JellieEntityConfig();
         @Configurable
-        public JellieEntityConfig latexJellie = new JellieEntityConfig();
+        public JellieEntityConfig milkJellie = new JellieEntityConfig();
         @Configurable
         public JellieEntityConfig lavaJellie = new JellieEntityConfig();
         @Configurable
