@@ -6,7 +6,7 @@
 
 #### Jellies fall into a few categories:
 - Non-producing (Spring/Pyritie) - usually reserved for "collectable" jellies.
-- Slime Ball producing (Plant/Glowberry/Latex/Phosphorum/Herbal/Biotite) - produce slime balls that can be turned into items using recipes defined in modpacks.
+- Slime Ball producing (Plant/Glowberry/Milk/Phosphorum/Herbal/Biotite) - produce slime balls that can be turned into items using recipes defined in modpacks.
 - Unique Production (Certus/Rock/Cheese) - produce products, but in a more unique way.
 - Unique Mechanics (Lava/Ice/Pentetic) - do not produce anything, but have something functionally different. 
 

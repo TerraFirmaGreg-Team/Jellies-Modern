@@ -26,8 +26,8 @@ import team.terrafirmagreg.jellies.common.entity.jellie.certus.CertusJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.glowberry.GlowberryJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.herbal.HerbalJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.ice.IceJellie;
-import team.terrafirmagreg.jellies.common.entity.jellie.latex.LatexJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.lava.LavaJellie;
+import team.terrafirmagreg.jellies.common.entity.jellie.milk.MilkJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.pentetic.PenteticJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.phosphorum.PhosphorumJellie;
 import team.terrafirmagreg.jellies.common.entity.jellie.plant.PlantJellie;
@@ -49,14 +49,14 @@ public class JelliesEntities {
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<CertusJellie> CERTUS_JELLIE = createJellie("certus", "Certus", CertusJellie::new, CertusJellie::createAttributes, CertusJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
-    public static final EntityEntry<GlowberryJellie> GLOWBERRY_JELLIE = createJellie("glowberry", "Glowberry", GlowberryJellie::new, GlowberryJellie::createAttributes, GlowberryJellie::spawnRules,
+    public static final EntityEntry<GlowberryJellie> GLOWBERRY_JELLIE = createJellie("glowberry", "Glow Berry", GlowberryJellie::new, GlowberryJellie::createAttributes, GlowberryJellie::spawnRules,
             MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<HerbalJellie> HERBAL_JELLIE = createJellie("herbal", "Herbal", HerbalJellie::new, HerbalJellie::createAttributes, HerbalJellie::spawnRules, MobCategory.AXOLOTLS,
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<IceJellie> ICE_JELLIE = createJellie("ice", "Ice", IceJellie::new, IceJellie::createAttributes, IceJellie::spawnRules, MobCategory.AMBIENT,
             () -> JellieBaseRenderer::new);
-    public static final EntityEntry<LatexJellie> LATEX_JELLIE = createJellie("latex", "Latex", LatexJellie::new, LatexJellie::createAttributes, LatexJellie::spawnRules, MobCategory.AMBIENT,
+    public static final EntityEntry<MilkJellie> MILK_JELLIE = createJellie("milk", "Milk", MilkJellie::new, MilkJellie::createAttributes, MilkJellie::spawnRules, MobCategory.AMBIENT,
             () -> JellieBaseRenderer::new);
     public static final EntityEntry<LavaJellie> LAVA_JELLIE = createJellie("lava", "Lava", LavaJellie::new, LavaJellie::createAttributes, LavaJellie::spawnRules, MobCategory.AMBIENT,
             () -> JellieBaseRenderer::new);

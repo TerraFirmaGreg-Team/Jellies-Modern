@@ -1,7 +1,6 @@
 {
     "jellies.tooltip.jellie.variant.glowberry": "Variant: Glowberry",
     "entity.jellies.jellie.male": "Jellie",
-    "jellies.tooltip.jellie.variant.latex": "Variant: Ice",
     "jellies.tooltip.jellie.variant.ice": "Variant: Ice",
     "jellies.tooltip.jellie.variant.lava": "Variant: Lava",
     "item.jellies.jellie.slime_ball.plant": "Plant Slime Ball",
@@ -10,7 +9,8 @@
     "jellies.tooltip.jellie.variant.plant": "Variant: Plant",
     "jellies.jade.product.jellie": "Product Ready!",
     "entity.jellies.jellie.female": "Jellie",
+    "jellies.tooltip.jellie.variant.milk": "Variant: Milk",
     "entity.jellies.jellie": "Jellie",
-    "item.jellies.jellie.slime_ball.latex": "Latex Slime Ball",
+    "item.jellies.jellie.slime_ball.milk": "Milk Slime Ball",
     "item.jellies.jellie.slime_ball.glowberry": "Glowberry Slime Ball"
 }
